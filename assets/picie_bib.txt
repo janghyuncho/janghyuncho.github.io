@@ -1,0 +1,8 @@
+@InProceedings{Cho_2021_CVPR,
+    author    = {Cho, Jang Hyun and Mall, Utkarsh and Bala, Kavita and Hariharan, Bharath},
+    title     = {PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance in Clustering},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {16794-16804}
+}

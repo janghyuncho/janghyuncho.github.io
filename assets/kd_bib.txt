@@ -1,0 +1,7 @@
+@InProceedings{Cho_2019_ICCV,
+    author = {Cho, Jang Hyun and Hariharan, Bharath},
+    title = {On the Efficacy of Knowledge Distillation},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month = {October},
+    year = {2019}
+}

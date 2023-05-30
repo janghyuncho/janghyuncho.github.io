@@ -1,0 +1,6 @@
+@inproceedings{cho2022ecm,
+	title={Long-tail Detection with Effective Class-Margins},
+	author={Jang Hyun Cho and Philipp Kr{\"a}henb{\"u}hl},
+	booktitle={European Conference on Computer Vision (ECCV)},
+	year={2022}
+}

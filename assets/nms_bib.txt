@@ -1,0 +1,6 @@
+@article{ouyang2022nms,
+  title={NMS Strikes Back},
+  author={Ouyang-Zhang, Jeffrey and Cho, Jang Hyun and Zhou, Xingyi and Kr{\"a}henb{\"u}hl, Philipp},
+  journal={arXiv preprint arXiv:2212.06137},
+  year={2022}
+}
