@@ -1,0 +1,6 @@
+@article{cho2023language,
+  title={Language-conditioned Detection Transformer},
+  author={Cho, Jang Hyun and Kr{\"a}henb{\"u}hl, Philipp},
+  journal={arXiv preprint arXiv:2311.17902},
+  year={2023}
+  }
