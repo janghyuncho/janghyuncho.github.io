@@ -81,47 +81,23 @@
         border-bottom: 1px solid var(--line);
       }
       .thumbnail {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--line);
+        border-radius: 3px;
+      }
+      .thumbnail.placeholder {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 180px;
-        height: 112px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 4px;
-        background: #fff;
+        aspect-ratio: 16 / 9;
+        padding: 10px;
+        color: var(--muted);
+        background: var(--soft);
+        font-size: .75rem;
+        text-align: center;
       }
-      .thumbnail img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        padding: 5px;
-        object-fit: contain;
-      }
-      .paper-cover {
-        position: relative;
-        align-items: flex-end;
-        justify-content: flex-start;
-        padding: 14px;
-        color: #fff;
-        background: #27384a;
-      }
-      .paper-cover::before {
-        content: "";
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        width: 34px;
-        height: 34px;
-        border: 1px solid rgba(255,255,255,.5);
-        border-radius: 50%;
-      }
-      .paper-cover.green { background: #3c6656; }
-      .paper-cover.rust { background: #925640; }
-      .paper-cover.blue { background: #385f7a; }
-      .paper-cover.gray { color: var(--text); background: #ecebea; }
-      .paper-cover.gray::before { border-color: #9aa0a6; }
-      .paper-cover span { position: relative; max-width: 125px; font-size: .73rem; font-weight: 650; line-height: 1.25; }
       .publication h3 { margin: -3px 0 5px; font-size: 1.06rem; line-height: 1.42; }
       .authors, .venue { margin: 0 0 3px; color: var(--muted); font-size: .86rem; line-height: 1.5; }
       .authors strong { color: var(--text); font-weight: 650; }
@@ -144,11 +120,8 @@
         .intro-copy { display: contents; }
         section { padding: 46px 0; }
         .news li { grid-template-columns: 1fr; gap: 0; margin-bottom: 17px; }
-        .publication { grid-template-columns: 120px minmax(0, 1fr); gap: 16px; }
-        .thumbnail { width: 120px; height: 82px; }
-        .paper-cover { padding: 9px; }
-        .paper-cover span { font-size: .61rem; }
-        .paper-cover::before { top: 9px; right: 9px; width: 24px; height: 24px; }
+        .publication { grid-template-columns: 104px minmax(0, 1fr); gap: 15px; }
+        .thumbnail.placeholder { padding: 6px; font-size: .66rem; }
         .publication h3 { font-size: .95rem; }
         .authors, .venue { font-size: .78rem; }
         .paper-links { grid-column: 1 / -1; margin-top: 0; }
@@ -172,7 +145,7 @@
 
     <main class="container">
       <div class="intro" id="about">
-        <img class="portrait" src="assets/images/face.png" alt="Jang Hyun Cho" width="982" height="1268">
+        <img class="portrait" src="assets/thumbs/face.webp" alt="Jang Hyun Cho" width="480" height="620">
         <div class="intro-copy">
           <h1>Jang Hyun (Vincent) Cho</h1>
           <p class="role">Research Scientist at Meta Superintelligence Labs (MSL)</p>
@@ -206,7 +179,7 @@
 
         <p class="year">2026</p>
         <article class="publication">
-          <div class="thumbnail paper-cover"><span>The Llama 4 Herd</span></div>
+          <div class="thumbnail placeholder">Technical report</div>
           <div>
             <h3>The Llama 4 Herd: Architecture, Training, Evaluation, and Deployment Notes</h3>
             <p class="authors">A. Adcock, A. Srivastava, A. Dubey, et al., including <strong>Jang Hyun Cho</strong></p>
@@ -217,7 +190,7 @@
 
         <p class="year">2025</p>
         <article class="publication">
-          <div class="thumbnail paper-cover green"><span>PerceptionLM</span></div>
+          <img class="thumbnail" src="assets/thumbs/perceptionlm.webp" alt="PerceptionLM teaser figure" width="480" height="239" loading="lazy">
           <div>
             <h3>PerceptionLM: Open-Access Data and Models for Detailed Visual Understanding</h3>
             <p class="authors"><strong>Jang Hyun Cho*</strong>, Andrea Madotto*, Effrosyni Mavroudi*, Triantafyllos Afouras*, Tushar Nagarajan*, Muhammad Maaz*, Yale Song*, Tengyu Ma*, et al.</p>
@@ -230,7 +203,7 @@
         </article>
 
         <article class="publication">
-          <div class="thumbnail paper-cover blue"><span>Perception Encoder</span></div>
+          <img class="thumbnail" src="assets/thumbs/perception_encoder.webp" alt="Perception Encoder teaser figure" width="480" height="105" loading="lazy">
           <div>
             <h3>Perception Encoder: The Best Visual Embeddings Are Not at the Output of the Network</h3>
             <p class="authors">Daniel Bolya*, Po-Yao Huang*, Peize Sun*, <strong>Jang Hyun Cho*</strong>, Andrea Madotto*, Chen Wei, Tengyu Ma, Jiale Zhi, et al.</p>
@@ -243,7 +216,7 @@
         </article>
 
         <article class="publication">
-          <div class="thumbnail paper-cover rust"><span>VILA²: VILA Augmented VILA</span></div>
+          <img class="thumbnail" src="assets/thumbs/vila2.webp" alt="VILA squared teaser figure" width="480" height="96" loading="lazy">
           <div>
             <h3>VILA²: VILA Augmented VILA</h3>
             <p class="authors">Yunhao Fang*, Ligeng Zhu*, Yao Lu, Yan Wang, Pavlo Molchanov, Jan Kautz, <strong>Jang Hyun Cho</strong>, Marco Pavone, Song Han, Hongxu Yin</p>
@@ -253,7 +226,7 @@
         </article>
 
         <article class="publication">
-          <div class="thumbnail"><img src="assets/gifs/cubellm_teaser.gif" alt="Cube-LLM teaser"></div>
+          <img class="thumbnail" src="assets/thumbs/cubellm.webp" alt="Cube-LLM teaser figure" width="480" height="191" loading="lazy">
           <div>
             <h3>Language-Image Models with 3D Understanding</h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Boris Ivanovic, Yulong Cao, Edward Schmerling, Yue Wang, Xinshuo Weng, Boyi Li, Yurong You, Philipp Krähenbühl, Yan Wang, Marco Pavone</p>
@@ -266,7 +239,7 @@
         </article>
 
         <article class="publication">
-          <div class="thumbnail paper-cover gray"><span>Ph.D. Dissertation</span></div>
+          <div class="thumbnail placeholder">Ph.D. dissertation</div>
           <div>
             <h3>Learning Vision Language Models from a Messy and Unstructured World</h3>
             <p class="authors"><strong>Jang Hyun Cho</strong></p>
@@ -277,7 +250,7 @@
 
         <p class="year">2024</p>
         <article class="publication">
-          <div class="thumbnail"><img src="assets/images/decola.png" alt="DECOLA teaser"></div>
+          <img class="thumbnail" src="assets/thumbs/decola.webp" alt="DECOLA teaser figure" width="480" height="310" loading="lazy">
           <div>
             <h3>Language-Conditioned Detection Transformer</h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
@@ -293,7 +266,7 @@
 
         <p class="year">2023</p>
         <article class="publication">
-          <div class="thumbnail"><img src="assets/images/part_distillation.png" alt="PartDistillation teaser"></div>
+          <img class="thumbnail" src="assets/thumbs/part_distillation.webp" alt="PartDistillation teaser figure" width="480" height="205" loading="lazy">
           <div>
             <h3>PartDistillation: Learning Parts from Instance Segmentation</h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl, Vignesh Ramanathan</p>
@@ -309,7 +282,7 @@
 
         <p class="year">2022</p>
         <article class="publication">
-          <div class="thumbnail"><img src="assets/images/nms.png" alt="NMS Strikes Back teaser"></div>
+          <img class="thumbnail" src="assets/thumbs/nms.webp" alt="NMS Strikes Back teaser figure" width="480" height="248" loading="lazy">
           <div>
             <h3>NMS Strikes Back</h3>
             <p class="authors">Jeffrey Ouyang-Zhang, <strong>Jang Hyun Cho</strong>, Xingyi Zhou, Philipp Krähenbühl</p>
@@ -323,7 +296,7 @@
         </article>
 
         <article class="publication">
-          <div class="thumbnail"><img src="assets/images/ecm_loss.png" alt="ECM-Loss teaser"></div>
+          <img class="thumbnail" src="assets/thumbs/ecm_loss.webp" alt="ECM-Loss teaser figure" width="480" height="339" loading="lazy">
           <div>
             <h3>Long-Tail Detection with Effective Class-Margins</h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
@@ -338,7 +311,7 @@
 
         <p class="year">2021</p>
         <article class="publication">
-          <div class="thumbnail"><img src="assets/images/picie.png" alt="PiCIE teaser"></div>
+          <img class="thumbnail" src="assets/thumbs/picie.webp" alt="PiCIE teaser figure" width="480" height="307" loading="lazy">
           <div>
             <h3>PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance in Clustering</h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Utkarsh Mall, Kavita Bala, Bharath Hariharan</p>
@@ -353,7 +326,7 @@
 
         <p class="year">2019</p>
         <article class="publication">
-          <div class="thumbnail"><img src="assets/images/distillation.png" alt="Knowledge Distillation teaser"></div>
+          <img class="thumbnail" src="assets/thumbs/distillation.webp" alt="Knowledge distillation teaser figure" width="480" height="275" loading="lazy">
           <div>
             <h3>On the Efficacy of Knowledge Distillation</h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Bharath Hariharan</p>
