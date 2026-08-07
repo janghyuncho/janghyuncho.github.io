@@ -267,11 +267,14 @@
           gap: 18px;
           padding: 32px 0 40px;
         }
-        h1 { margin: -6px 0 8px; font-size: 2.15rem; letter-spacing: -.022em; }
+        h1 { margin: -6px 0 0; font-size: 2.1rem; letter-spacing: -.022em; }
         .portrait:hover { transform: none; box-shadow: none; }
+        /* Only the name sits beside the portrait; everything else runs the
+           full width, or the prose is squeezed into a ~140px column. */
+        .intro-copy { display: contents; }
         .intro .role, .intro .prose, .intro .social { grid-column: 1 / -1; }
         .role { margin: 0; }
-        .social { margin-top: 18px; gap: 14px 18px; }
+        .social { margin-top: 0; gap: 14px 18px; }
 
         .band { padding: 40px 0; }
         .band-head { margin-bottom: 22px; }
