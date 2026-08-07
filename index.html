@@ -1,518 +1,570 @@
-
-
 <!doctype html>
-<title>Jang Hyun (Vincent) Cho</title>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="X9ejks-yQLjsk75A5erA9aSQ6X8Yiz5h-r5HHh0Oleo" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    
+    <meta name="description" content="Jang Hyun (Vincent) Cho is a research scientist at Meta Superintelligence Labs working on multimodal reasoning and visual understanding.">
+    <meta name="google-site-verification" content="X9ejks-yQLjsk75A5erA9aSQ6X8Yiz5h-r5HHh0Oleo">
+    <meta name="theme-color" content="#f5f3ee">
+    <title>Jang Hyun (Vincent) Cho — Research Scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+      :root {
+        --ink: #17211d;
+        --muted: #64706a;
+        --paper: #f5f3ee;
+        --surface: #fffdf8;
+        --line: #dcded7;
+        --accent: #315b4c;
+        --accent-light: #dce8e2;
+        --warm: #b85c38;
+        --serif: "Instrument Serif", Georgia, serif;
+        --sans: "DM Sans", system-ui, sans-serif;
       }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 8% 2%, rgba(184, 92, 56, .08), transparent 26rem),
+          var(--paper);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.7;
       }
 
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+      a { color: inherit; }
+      a:focus-visible, button:focus-visible { outline: 3px solid var(--warm); outline-offset: 4px; }
+      .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(23, 33, 29, .1);
+        background: rgba(245, 243, 238, .88);
+        backdrop-filter: blur(16px);
       }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
+      .nav {
+        min-height: 68px;
         display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
       }
-
-      .badge {
-        background-color:#b05990;
+      .wordmark {
+        text-decoration: none;
+        font-family: var(--serif);
+        font-size: 1.45rem;
+        letter-spacing: -.02em;
       }
-
-      div.title {
-        font-weight: bold;
+      .nav-links { display: flex; align-items: center; gap: 28px; }
+      .nav-links a {
+        color: var(--muted);
+        font-size: .88rem;
+        font-weight: 600;
+        text-decoration: none;
       }
+      .nav-links a:hover { color: var(--ink); }
 
-      .iconn {
-        color: black;
-        font-size: 40px;
+      .hero {
+        min-height: calc(100vh - 68px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr);
+        align-items: center;
+        gap: clamp(48px, 9vw, 120px);
+        padding-block: 88px;
       }
-
-      .iconn:hover {
-        color: #b05990;
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 24px;
+        color: var(--accent);
+        font-size: .78rem;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
       }
-
-      main {
-        font-family: "Roboto",sans-serif;
-        font-weight: 300;
-      }
-
+      .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--warm); }
+      h1, h2, h3, p { margin-top: 0; }
       h1 {
-        font-family: "Roboto",sans-serif;
-        font-weight: 300;
+        max-width: 780px;
+        margin-bottom: 24px;
+        font-family: var(--serif);
+        font-size: clamp(3.65rem, 8vw, 7.25rem);
+        font-weight: 400;
+        letter-spacing: -.055em;
+        line-height: .9;
       }
+      h1 em { color: var(--accent); font-weight: 400; }
+      .hero-copy {
+        max-width: 700px;
+        color: #435049;
+        font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+      }
+      .hero-copy a, .bio a { color: var(--accent); text-underline-offset: 3px; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        min-height: 46px;
+        padding: 10px 18px;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        font-size: .88rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform .2s ease, background .2s ease, color .2s ease;
+      }
+      .button:hover { transform: translateY(-2px); }
+      .button.primary { color: var(--paper); background: var(--ink); }
+      .button.secondary:hover { color: var(--paper); background: var(--ink); }
+      .portrait-wrap { position: relative; }
+      .portrait-wrap::before {
+        content: "";
+        position: absolute;
+        inset: -16px 18px 16px -18px;
+        border: 1px solid var(--warm);
+        border-radius: 52% 48% 45% 55%;
+      }
+      .portrait {
+        position: relative;
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        filter: saturate(.78) contrast(1.03);
+        border-radius: 48% 52% 48% 52%;
+      }
+      .availability {
+        position: absolute;
+        right: -14px;
+        bottom: 16px;
+        padding: 8px 13px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        box-shadow: 0 8px 30px rgba(23, 33, 29, .12);
+        font-size: .76rem;
+        font-weight: 600;
+      }
+      .availability::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #4b9a70; }
 
+      section { padding-block: 100px; border-top: 1px solid var(--line); }
+      .section-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(40px, 8vw, 100px); }
+      .section-label {
+        margin: 0;
+        color: var(--muted);
+        font-size: .76rem;
+        font-weight: 600;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+      .section-label span { display: inline-block; min-width: 30px; color: var(--warm); }
       h2 {
-        font-family: "Roboto",sans-serif;
-        font-weight: 300;
+        margin-bottom: 32px;
+        font-family: var(--serif);
+        font-size: clamp(2.5rem, 5vw, 4.4rem);
+        font-weight: 400;
+        letter-spacing: -.035em;
+        line-height: 1;
+      }
+      .bio { max-width: 770px; color: #435049; font-size: 1.1rem; }
+      .bio strong { color: var(--ink); font-weight: 600; }
+      .interests { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+      .interest {
+        padding: 7px 13px;
+        color: var(--accent);
+        border: 1px solid #b9cbc2;
+        border-radius: 999px;
+        background: rgba(220, 232, 226, .5);
+        font-size: .8rem;
+        font-weight: 600;
       }
 
-      
-      
-    </style>
+      .news-list { margin: 0; padding: 0; list-style: none; }
+      .news-item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 24px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .news-item:first-child { border-top: 1px solid var(--line); }
+      .news-date { color: var(--warm); font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+      .news-text { color: #435049; }
+      .news-text strong { color: var(--ink); font-weight: 600; }
 
-    
+      .publication-intro {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 26px;
+      }
+      .publication-intro h2 { margin-bottom: 0; }
+      .scholar-link { color: var(--accent); font-size: .85rem; font-weight: 600; text-underline-offset: 4px; white-space: nowrap; }
+      .year-group { margin-top: 52px; }
+      .year {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: .74rem;
+        font-weight: 600;
+        letter-spacing: .14em;
+      }
+      .year::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+      .paper {
+        display: grid;
+        grid-template-columns: 80px minmax(0, 1fr) auto;
+        gap: 24px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .venue {
+        align-self: start;
+        padding: 5px 9px;
+        color: var(--accent);
+        border: 1px solid #b9cbc2;
+        border-radius: 5px;
+        background: var(--accent-light);
+        font-size: .67rem;
+        font-weight: 600;
+        letter-spacing: .06em;
+        line-height: 1.3;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .paper h3 {
+        margin: -3px 0 7px;
+        font-family: var(--serif);
+        font-size: clamp(1.35rem, 2.3vw, 1.75rem);
+        font-weight: 400;
+        letter-spacing: -.015em;
+        line-height: 1.2;
+      }
+      .authors { margin-bottom: 5px; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+      .authors .me { color: var(--ink); font-weight: 600; }
+      .note { margin: 0; color: var(--warm); font-size: .75rem; font-weight: 600; }
+      .paper-links { display: flex; align-items: start; flex-wrap: wrap; justify-content: end; gap: 7px; }
+      .paper-links a {
+        padding: 5px 9px;
+        color: var(--muted);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: .7rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .paper-links a:hover { color: var(--surface); border-color: var(--accent); background: var(--accent); }
+
+      footer { padding-block: 48px; }
+      .footer-inner { display: flex; justify-content: space-between; gap: 24px; color: var(--muted); font-size: .78rem; }
+      .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+      .footer-links a { text-underline-offset: 3px; }
+
+      @media (max-width: 760px) {
+        .wrap { width: min(100% - 28px, 620px); }
+        .nav-links a:not(:last-child) { display: none; }
+        .hero { min-height: auto; grid-template-columns: 1fr; padding-block: 70px 90px; }
+        .hero-copy { font-size: 1rem; }
+        .portrait-wrap { width: min(74%, 310px); margin: 24px auto 0; order: -1; }
+        section { padding-block: 76px; }
+        .section-grid { grid-template-columns: 1fr; gap: 22px; }
+        .publication-intro { align-items: start; flex-direction: column; }
+        .paper { grid-template-columns: 64px minmax(0, 1fr); gap: 16px; }
+        .paper-links { grid-column: 2; justify-content: start; }
+        .news-item { grid-template-columns: 1fr; gap: 4px; }
+        .footer-inner { flex-direction: column; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition: none !important; }
+      }
+    </style>
   </head>
   <body>
-    
-    <main>
-
-    <section class="py-5 text-center container">
-        
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Jang Hyun</b> (Vincent) Cho</h1>
-            </div>
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Primary navigation">
+        <a class="wordmark" href="#top">Jang Hyun Cho</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Scholar ↗</a>
         </div>
-        <div class="row">
-            <div class="col-md-2 col-xs-12"></div>
-            <div class="col-md-3 col-xs-12">
-                <img src="assets/images/face.png" align="middle" width="80%"/>
-            </div>
-            <div class="col-md-5 col-xs-12" style="text-align: left;">
-                <p>
-                    I am a Research Scientist at Meta FAIR Perception. 
-                    I did my Ph.D. in Computer Science at UT Austin, advised by Prof. <a href="https://www.philkr.net/" target="_blank" style="color:#b05990"><b>Philipp Krähenbühl</b></a>. 
-                    Before UT Austin, I received my Bachelor degree in Computer Science from Cornell University, where I had pleasure working with Prof. <a href="http://home.bharathh.info/" target="_blank" style="color:#b05990"><b>Bharath Hariharan</b></a> and Prof. <a href="https://www.cs.cornell.edu/~kb/" target="_blank" style="color:#b05990"><b>Kavita Bala</b></a>.
-                    I have previously worked at Meta and NVIDIA.
-                </p>
-                <p>
-                    My current research interest is broadly in vision-language modeling and multimodal reasoning.
-                </p>
-                <p>
-                    <i>(Last updated: April 2025)</i>
-                </p>
-                
-                <br><br> <!-- newline -->
+      </nav>
+    </header>
 
-                <div class="contact-icons" style="text-align: center;">
-                    <a href="mailto:%6A%61%6E%67%68%79%75%6E%63%68%6F%37@%75%74%65%78%61%73.%65%64%75" title="email"><i class="iconn fas fa-envelope"></i></a>
-                    <a href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="iconn ai ai-google-scholar"></i></a>
-                    <a href="https://github.com/janghyuncho" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="iconn fab fa-github"></i></a>
-                    <a href="https://twitter.com/vincent_jh_cho" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="iconn fa-brands fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="col-md-2 col-xs-12"></div>
-            
-            
+    <main id="top">
+      <div class="hero wrap">
+        <div>
+          <p class="eyebrow">Research Scientist · Meta MSL</p>
+          <h1>Jang Hyun <em>(Vincent)</em> Cho</h1>
+          <p class="hero-copy">I build multimodal systems that learn from the messy, unstructured world—spanning visual representation learning, vision-language models, and spatial reasoning.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#publications">View publications <span aria-hidden="true">↓</span></a>
+            <a class="button secondary" href="mailto:%6A%61%6E%67%68%79%75%6E%63%68%6F%37@%75%74%65%78%61%73.%65%64%75">Email me</a>
+          </div>
         </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="assets/images/face.png" alt="Portrait of Jang Hyun Cho" width="600" height="750">
+          <span class="availability">San Francisco, CA</span>
+        </div>
+      </div>
 
-    </section>
-
-    <section class="py-5 text-center container">
-        <div class="row">
-            <div class="col-md-2 col-xs-12"></div>
-            <div class="col-md-8 col-xs-12" style="text-align: left;">
-                <h2>News</h2>
-
-                <div class="table-responsive">
-                <table class="table table-sm table-borderless">
-                    <!-- <tr>
-                        <th scope="row">Apr 17, 2025</th>
-                        <td>
-                            We released Perception Encoder and PerceptionLM! 
-                        </td>
-                    </tr>  -->
-                    <tr>
-                        <th scope="row">Apr 8, 2025</th>
-                        <td>
-                            I did my defense! 
-                        </td>
-                    </tr> 
-                    <tr>
-                        <th scope="row">Jan 22, 2025</th>
-                        <td>
-                            Cube-LLM is accepted at ICLR!
-                        </td>
-                    </tr> 
-                    <tr>
-                        <th scope="row">Jan 13, 2025</th>
-                        <td>
-                            I joined FAIR Perception Team as a Research Scientist!  
-                        </td>
-                    </tr> 
-                    <!-- <tr>
-                        <th scope="row">May 20, 2024</th>
-                        <td>
-                            I joined FAIR as a research scientist intern. 
-                        </td>
-                    </tr> 
-                    <tr>
-                        <th scope="row">Feb 27, 2024</th>
-                        <td>
-                            DECOLA has been accepted to CVPR 2024. See you in Seattle!
-                        </td>
-                    </tr> 
-                    <tr>
-                    <tr>
-                        <th scope="row">Sep 18, 2023</th>
-                        <td>
-                            I joined NVIDIA AV Research as a research intern. 
-                        </td>
-                    </tr> 
-                    <tr>
-                        <th scope="row">Mar 5, 2023</th>
-                        <td>
-                            PartDistillation has been accepted to CVPR 2023.
-                        </td>
-                    </tr> 
-                    
-                    <tr>
-                        <th scope="row">Jul 3, 2022</th>
-                        <td>
-                            ECM-Loss has been accepted to ECCV 2022 as Oral!
-                        </td>
-                    </tr> 
-
-                    <tr>
-                        <th scope="row">May 23, 2022</th>
-                        <td>
-                            I joined FAIR as a research scientist intern.
-                        </td>
-                    </tr>  -->
-
-                    <!-- 
-                        TEMPLATE TO ADD NEW NEWS
-
-                        <tr>
-                            <th scope="row">DATE</th>
-                            <td>
-                                CONTENT: I joined FAIR as a research scientist intern.
-                            </td>
-                        </tr> 
-
-                     -->
-                </table>
-                </div> 
-                
-
+      <section id="about">
+        <div class="section-grid wrap">
+          <p class="section-label"><span>01</span> About</p>
+          <div>
+            <h2>Research at the intersection of vision and language.</h2>
+            <div class="bio">
+              <p>I am a <strong>Research Scientist at Meta Superintelligence Labs (MSL)</strong>, where I work on visual perception and multimodal intelligence.</p>
+              <p>I earned my Ph.D. in Computer Science from <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer">UT Austin</a>, advised by Prof. <a href="https://www.philkr.net/" target="_blank" rel="noopener noreferrer">Philipp Krähenbühl</a>. Before that, I received my B.S. in Computer Science from <a href="https://www.cornell.edu/" target="_blank" rel="noopener noreferrer">Cornell University</a>, where I worked with Prof. <a href="http://home.bharathh.info/" target="_blank" rel="noopener noreferrer">Bharath Hariharan</a> and Prof. <a href="https://www.cs.cornell.edu/~kb/" target="_blank" rel="noopener noreferrer">Kavita Bala</a>. I have also worked at NVIDIA and Meta FAIR.</p>
             </div>
-            <div class="col-md-2 col-xs-12"></div>
-        </div>
-
-        </div>
-    </section>
-
-    <section class="py-5 text-center container">
-        <div class="row">
-            <div class="col-md-2 col-xs-12"></div>
-            <div class="col-md-8 col-xs-12" style="text-align: left;">
-                <h2>Publications</h2>
-
-                <!----------- Publication 7 ----------->
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col-xs-12 col-sm-12 col-md-4 abbr">
-                        <abbr class="badge">ICLR</abbr>
-                        <br>
-                        <img src="assets/gifs/cubellm_teaser.gif" alt="cubellm teaser" align="middle" width="100%" />
-                    </div>
-            
-                    <!-- Entry bib key -->
-                    <div id="DBLP:conf/cvpr/ChoMBH21" class="col-xs-12 col-sm-12 col-md-8">
-                    <br>
-                    <!-- Title -->
-                    <div class="title">
-                        Language-Image Models with 3D Understanding
-                    </div>
-
-                    <!-- Author -->
-                    <div class="author"> 
-                        <font style="text-decoration: underline;">Jang Hyun Cho</font>, Boris Ivanovic, Yulong Cao, Edward Schmerling, Yue Wang, Xinshuo Weng, Boyi Li, Yurong You, Philipp Krähenbühl, Yan Wang, Marco Pavone
-                    </div>
-            
-                    <!-- Journal/Book title and date -->
-                    <div class="periodical">
-                        <em>ICLR, 2025</em>
-                    </div>
-                    
-                    <!-- Links/Buttons -->
-                    <div class="links">
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://openreview.net/pdf?id=yaQbTAD2JJ">paper</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://janghyuncho.github.io/Cube-LLM">website</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="">code (coming soon)</a>
-                    </div>
-                </div>
-
-                <!----------- Publication 6 ----------->
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col-xs-12 col-sm-12 col-md-4 abbr">
-                        <abbr class="badge">CVPR</abbr>
-                        <br>
-                        <img src="assets/images/decola.png" align="middle" width="100%" />
-                    </div>
-            
-                    <!-- Entry bib key -->
-                    <div id="DBLP:conf/cvpr/ChoMBH21" class="col-xs-12 col-sm-12 col-md-8">
-                    <br>
-                    <!-- Title -->
-                    <div class="title">
-                        Language-conditioned Detection Transformer
-                    </div>
-
-                    <!-- Author -->
-                    <div class="author"> 
-                        <font style="text-decoration: underline;">Jang Hyun Cho</font>, Philipp Krähenbühl
-                    </div>
-            
-                    <!-- Journal/Book title and date -->
-                    <div class="periodical">
-                        <em>CVPR, 2024</em>
-                    </div>
-                    
-                    <!-- Links/Buttons -->
-                    <div class="links">
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://arxiv.org/pdf/2311.17902.pdf">paper</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://janghyuncho.github.io/DECOLA/">website</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://github.com/janghyuncho/DECOLA">code</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="assets/bibtex/decola_bib.txt">bibtex</a>
-                    </div>
-                </div>
-              
-                <!----------- Publication 5 ----------->
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col-xs-12 col-sm-12 col-md-4 abbr">
-                        <abbr class="badge">CVPR</abbr>
-                        <br>
-                        <img src="assets/images/part_distillation.png" align="middle" width="100%" />
-                    </div>
-            
-                    <!-- Entry bib key -->
-                    <div id="DBLP:conf/cvpr/ChoMBH21" class="col-xs-12 col-sm-12 col-md-8">
-                    <br>
-                    <!-- Title -->
-                    <div class="title">
-                        PartDistillation: Learning Parts from Instance Segmentation 
-                    </div>
-
-                    <!-- Author -->
-                    <div class="author"> 
-                        <font style="text-decoration: underline;">Jang Hyun Cho</font>, Philipp Krähenbühl, Vignesh Ramanathan
-                    </div>
-            
-                    <!-- Journal/Book title and date -->
-                    <div class="periodical">
-                        <em>CVPR, 2023</em>
-                    </div>
-                    
-                    <!-- Links/Buttons -->
-                    <div class="links">
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf">paper</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://janghyuncho.github.io/PartDistillation_website/">website</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://github.com/facebookresearch/PartDistillation">code</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="assets/bibtex/pd_bib.txt">bibtex</a>
-                    </div>
-                </div>
-
-
-                <!----------- Publication 4 ----------->
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col-xs-12 col-sm-12 col-md-4 abbr">
-                        <abbr class="badge">arXiv</abbr>
-                        <br>
-                        <img src="assets/images/nms.png" align="middle" width="100%" />
-                    </div>
-            
-                    <!-- Entry bib key -->
-                    <div id="DBLP:conf/cvpr/ChoMBH21" class="col-xs-12 col-sm-12 col-md-8">
-                    <br>
-                    <!-- Title -->
-                    <div class="title">
-                        NMS Strikes Back
-                    </div>
-
-                    <!-- Author -->
-                    <div class="author"> 
-                        Jeffrey Ouyang-Zhang, <font style="text-decoration: underline;">Jang Hyun Cho</font>, Xingyi Zhou, Philipp Krähenbühl
-                    </div>
-            
-                    <!-- Journal/Book title and date -->
-                    <div class="periodical">
-                        <em>arXiv, 2022</em>
-                    </div>
-                    
-                    <!-- Links/Buttons -->
-                    <div class="links">
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://arxiv.org/pdf/2212.06137.pdf">paper</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://github.com/jozhang97/DETA">code</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="assets/bibtex/nms_bib.txt">bibtex</a>
-                    </div>
-                </div>
-
-                <!----------- Publication 3 ----------->
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col-xs-12 col-sm-12 col-md-4 abbr">
-                        <abbr class="badge">ECCV</abbr>
-                        <br>
-                        <img src="assets/images/ecm_loss.png" align="middle" width="100%" />
-                    </div>
-            
-                    <!-- Entry bib key -->
-                    <div id="DBLP:conf/cvpr/ChoMBH21" class="col-xs-12 col-sm-12 col-md-8">
-                    <br>
-                    <!-- Title -->
-                    <div class="title">
-                        Long-tail Detection with Effective Class-Margins
-                    </div>
-
-                    <!-- Author -->
-                    <div class="author"> 
-                        <font style="text-decoration: underline;">Jang Hyun Cho</font>, Philipp Krähenbühl
-                    </div>
-            
-                    <!-- Journal/Book title and date -->
-                    <div class="periodical">
-                        <em>European Conference on Computer Vision, ECCV
-                          2022, Tel Aviv, Oct 23-27, 2022 <b>(Oral)</b> </em>
-                    </div>
-                    
-                    <!-- Links/Buttons -->
-                    <div class="links">
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf">paper</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="https://github.com/janghyuncho/ECM-Loss">code</a>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="assets/bibtex/ecm_bib.txt">bibtex</a>
-                    </div>
-                </div>
-
-
-                    <!----------- Publication 2 ----------->
-                    <div class="row" style="margin-top: 20px;">
-                        <div class="col-xs-12 col-sm-12 col-md-4 abbr">
-                            <abbr class="badge">CVPR</abbr>
-                            <br>
-                            <!-- <img id="testing" src="/assets/img/picie.png" width="75%" style="visibility: true; display: block; float:left; margin-left: 40px; padding-bottom: 15px;"> -->
-                            <img src="assets/images/picie.png" align="middle" width="100%"/>
-                        </div>
-                
-                        <!-- Entry bib key -->
-                        <div id="DBLP:conf/cvpr/ChoMBH21" class="col-xs-12 col-sm-12 col-md-8">
-                        <br>
-                        <!-- Title -->
-                        <div class="title">
-                            PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance
-                            in Clustering
-                        </div>
-
-                        <!-- Author -->
-                        <div class="author"> 
-                            <font style="text-decoration: underline;">Jang Hyun Cho</font>, Utkarsh Mall, Kavita Bala, and Bharath Hariharan
-                        </div>
-                
-                        <!-- Journal/Book title and date -->
-                        <div class="periodical">
-                            <em>In IEEE Conference on Computer Vision and Pattern Recognition, CVPR
-                            2021, virtual, June 19-25, 2021</em>
-                        </div>
-                        
-                        <!-- Links/Buttons -->
-                        <div class="links">
-                            <a type="button" class="btn btn-outline-secondary btn-sm" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf">paper</a>
-                            <a type="button" class="btn btn-outline-secondary btn-sm" href="https://sites.google.com/view/picie-cvpr2021/home">website</a>
-                            <a type="button" class="btn btn-outline-secondary btn-sm" href="https://github.com/janghyuncho/PiCIE">code</a>
-                            <a type="button" class="btn btn-outline-secondary btn-sm" href="assets/bibtex/picie_bib.txt">bibtex</a>
-                        </div>
-                    </div>
-
-
-                    <!----------- Publication 1 ----------->
-                    <div class="row" style="margin-top: 20px;">
-                        <div class="col-xs-12 col-sm-12 col-md-4 abbr">
-                            <abbr class="badge">ICCV</abbr>
-                            <br>
-                            <!-- <img id="testing" src="/assets/img/picie.png" width="75%" style="visibility: true; display: block; float:left; margin-left: 40px; padding-bottom: 15px;"> -->
-                            <img src="assets/images/distillation.png" align="middle" width="100%"/>
-                        </div>
-                
-                        <!-- Entry bib key -->
-                        <div id="DBLP:conf/iccv/ChoH19" class="col-xs-12 col-sm-12 col-md-8">
-                        <br>
-                        <!-- Title -->
-                        <div class="title">
-                            On the Efficacy of Knowledge Distillation
-                        </div>
-
-                        <!-- Author -->
-                        <div class="author"> 
-                            <font style="text-decoration: underline;">Jang Hyun Cho</font>, and Bharath Hariharan
-                        </div>
-                
-                        <!-- Journal/Book title and date -->
-                        <div class="periodical">
-                            <em>In 2019 IEEE/CVF International Conference on Computer Vision, ICCV
-                                2019, Seoul, Korea (South), October 27 - November 2, 2019</em>
-                        </div>
-                        
-                        <!-- Links/Buttons -->
-                        <div class="links">
-                            <a type="button" class="btn btn-outline-secondary btn-sm" href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf">paper</a>
-                            <a type="button" class="btn btn-outline-secondary btn-sm" href="assets/bibtex/kd_bib.txt">bibtex</a>
-                        </div>
-                    </div>
-
+            <div class="interests" aria-label="Research interests">
+              <span class="interest">Multimodal reasoning</span>
+              <span class="interest">Vision-language models</span>
+              <span class="interest">Visual representation learning</span>
+              <span class="interest">2D &amp; 3D understanding</span>
             </div>
-            <div class="col-md-2 col-xs-12"></div>
+          </div>
         </div>
+      </section>
 
-    
-    </section>
+      <section id="news">
+        <div class="section-grid wrap">
+          <p class="section-label"><span>02</span> News</p>
+          <div>
+            <h2>Recent updates</h2>
+            <ol class="news-list">
+              <li class="news-item">
+                <time class="news-date" datetime="2025-12">NeurIPS 2025</time>
+                <div class="news-text"><strong>PerceptionLM</strong> and <strong>Perception Encoder</strong> were presented at NeurIPS; PerceptionLM received a spotlight.</div>
+              </li>
+              <li class="news-item">
+                <time class="news-date" datetime="2025-04">April 2025</time>
+                <div class="news-text">I completed my Ph.D. defense at UT Austin.</div>
+              </li>
+              <li class="news-item">
+                <time class="news-date" datetime="2025-01">January 2025</time>
+                <div class="news-text"><strong>Cube-LLM</strong> was accepted to ICLR 2025.</div>
+              </li>
+              <li class="news-item">
+                <time class="news-date" datetime="2025-01">January 2025</time>
+                <div class="news-text">I joined Meta as a Research Scientist.</div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
+      <section id="publications">
+        <div class="section-grid wrap">
+          <p class="section-label"><span>03</span> Work</p>
+          <div>
+            <div class="publication-intro">
+              <h2>Publications</h2>
+              <a class="scholar-link" href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">All records on Google Scholar ↗</a>
+            </div>
+
+            <div class="year-group">
+              <p class="year">2026</p>
+              <article class="paper">
+                <span class="venue">Tech<br>Report</span>
+                <div>
+                  <h3>The Llama 4 Herd: Architecture, Training, Evaluation, and Deployment Notes</h3>
+                  <p class="authors">Meta AI, including <span class="me">Jang Hyun Cho</span></p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://scholar.google.com/scholar?q=The+Llama+4+Herd+Architecture+Training+Evaluation+and+Deployment+Notes" target="_blank" rel="noopener noreferrer">Scholar ↗</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="year-group">
+              <p class="year">2025</p>
+              <article class="paper">
+                <span class="venue">NeurIPS</span>
+                <div>
+                  <h3>PerceptionLM: Open-Access Data and Models for Detailed Visual Understanding</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho*</span>, Andrea Madotto*, Effrosyni Mavroudi*, Triantafyllos Afouras*, Tushar Nagarajan*, Muhammad Maaz*, Yale Song*, Tengyu Ma*, Shuming Hu*, et al.</p>
+                  <p class="note">Spotlight · Joint first author</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/21f1c5bbf2519321c1bee9bfa9edcd46-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://github.com/facebookresearch/perception_models" target="_blank" rel="noopener noreferrer">Code ↗</a>
+                </div>
+              </article>
+
+              <article class="paper">
+                <span class="venue">NeurIPS</span>
+                <div>
+                  <h3>Perception Encoder: The Best Visual Embeddings Are Not at the Output of the Network</h3>
+                  <p class="authors">Daniel Bolya*, Po-Yao Huang*, Peize Sun*, <span class="me">Jang Hyun Cho*</span>, Andrea Madotto*, Chen Wei, Tengyu Ma, Jiale Zhi, et al.</p>
+                  <p class="note">Joint first author</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/57bc0a850255e2041341bf74c7e2b9fa-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://github.com/facebookresearch/perception_models" target="_blank" rel="noopener noreferrer">Code ↗</a>
+                </div>
+              </article>
+
+              <article class="paper">
+                <span class="venue">ICCVW</span>
+                <div>
+                  <h3>VILA²: VILA Augmented VILA</h3>
+                  <p class="authors">Yunhao Fang*, Ligeng Zhu*, Yao Lu, Yan Wang, Pavlo Molchanov, Jan Kautz, <span class="me">Jang Hyun Cho</span>, Marco Pavone, Song Han, Hongxu Yin</p>
+                  <p class="note">Oral presentation</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                </div>
+              </article>
+
+              <article class="paper">
+                <span class="venue">ICLR</span>
+                <div>
+                  <h3>Language-Image Models with 3D Understanding</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho</span>, Boris Ivanovic, Yulong Cao, Edward Schmerling, Yue Wang, Xinshuo Weng, Boyi Li, Yurong You, Philipp Krähenbühl, Yan Wang, Marco Pavone</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://janghyuncho.github.io/Cube-LLM" target="_blank" rel="noopener noreferrer">Project ↗</a>
+                </div>
+              </article>
+
+              <article class="paper">
+                <span class="venue">Ph.D.<br>Thesis</span>
+                <div>
+                  <h3>Learning Vision Language Models from a Messy and Unstructured World</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho</span> · The University of Texas at Austin</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://doi.org/10.26153/tsw/61349" target="_blank" rel="noopener noreferrer">Thesis ↗</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="year-group">
+              <p class="year">2024</p>
+              <article class="paper">
+                <span class="venue">CVPR</span>
+                <div>
+                  <h3>Language-Conditioned Detection Transformer</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho</span>, Philipp Krähenbühl</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://janghyuncho.github.io/DECOLA/" target="_blank" rel="noopener noreferrer">Project ↗</a>
+                  <a href="https://github.com/janghyuncho/DECOLA" target="_blank" rel="noopener noreferrer">Code ↗</a>
+                  <a href="assets/bibtex/decola_bib.txt">BibTeX</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="year-group">
+              <p class="year">2023</p>
+              <article class="paper">
+                <span class="venue">CVPR</span>
+                <div>
+                  <h3>PartDistillation: Learning Parts from Instance Segmentation</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho</span>, Philipp Krähenbühl, Vignesh Ramanathan</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://janghyuncho.github.io/PartDistillation_website/" target="_blank" rel="noopener noreferrer">Project ↗</a>
+                  <a href="https://github.com/facebookresearch/PartDistillation" target="_blank" rel="noopener noreferrer">Code ↗</a>
+                  <a href="assets/bibtex/pd_bib.txt">BibTeX</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="year-group">
+              <p class="year">2022</p>
+              <article class="paper">
+                <span class="venue">arXiv</span>
+                <div>
+                  <h3>NMS Strikes Back</h3>
+                  <p class="authors">Jeffrey Ouyang-Zhang, <span class="me">Jang Hyun Cho</span>, Xingyi Zhou, Philipp Krähenbühl</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://github.com/jozhang97/DETA" target="_blank" rel="noopener noreferrer">Code ↗</a>
+                  <a href="assets/bibtex/nms_bib.txt">BibTeX</a>
+                </div>
+              </article>
+
+              <article class="paper">
+                <span class="venue">ECCV</span>
+                <div>
+                  <h3>Long-Tail Detection with Effective Class-Margins</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho</span>, Philipp Krähenbühl</p>
+                  <p class="note">Oral presentation</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://github.com/janghyuncho/ECM-Loss" target="_blank" rel="noopener noreferrer">Code ↗</a>
+                  <a href="assets/bibtex/ecm_bib.txt">BibTeX</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="year-group">
+              <p class="year">2021</p>
+              <article class="paper">
+                <span class="venue">CVPR</span>
+                <div>
+                  <h3>PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance in Clustering</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho</span>, Utkarsh Mall, Kavita Bala, Bharath Hariharan</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="https://github.com/janghyuncho/PiCIE" target="_blank" rel="noopener noreferrer">Code ↗</a>
+                  <a href="assets/bibtex/picie_bib.txt">BibTeX</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="year-group">
+              <p class="year">2019</p>
+              <article class="paper">
+                <span class="venue">ICCV</span>
+                <div>
+                  <h3>On the Efficacy of Knowledge Distillation</h3>
+                  <p class="authors"><span class="me">Jang Hyun Cho</span>, Bharath Hariharan</p>
+                </div>
+                <div class="paper-links">
+                  <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                  <a href="assets/bibtex/kd_bib.txt">BibTeX</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->    
-    <!-- <footer class="fixed-bottom">
-    <div class="container mt-0">
-        © Copyright 2023 Jang Hyun (Vincent) Cho.
-    </div>
-    </footer> -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <footer>
+      <div class="footer-inner wrap">
+        <span>© 2026 Jang Hyun (Vincent) Cho</span>
+        <div class="footer-links">
+          <a href="mailto:%6A%61%6E%67%68%79%75%6E%63%68%6F%37@%75%74%65%78%61%73.%65%64%75">Email</a>
+          <a href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://github.com/janghyuncho" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://twitter.com/vincent_jh_cho" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a href="https://www.linkedin.com/in/vincent-cho-2a3b7914a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
