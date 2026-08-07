@@ -5,152 +5,331 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Jang Hyun (Vincent) Cho is a Research Scientist at Meta Superintelligence Labs, on the multimodal pretraining team building the next generation of Muse Spark.">
     <meta name="google-site-verification" content="X9ejks-yQLjsk75A5erA9aSQ6X8Yiz5h-r5HHh0Oleo">
+    <meta name="theme-color" content="#fbfaf8">
     <title>Jang Hyun (Vincent) Cho</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23202124'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fff' text-anchor='middle'%3EJC%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%239c3f72'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23fff' text-anchor='middle'%3EJC%3C/text%3E%3C/svg%3E">
+    <link rel="preload" href="assets/fonts/newsreader-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/inter-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
     <style>
       :root {
-        --text: #202124;
-        --muted: #5f6368;
-        --link: #315e95;
-        --line: #e4e6e8;
+        --paper: #fbfaf8;
+        --ink: #1a1917;
+        --muted: #6e6862;
+        --faint: #97918a;
+        --line: #e7e3db;
+        --accent: #9c3f72;
+        --accent-tint: #f4e9f0;
+        --serif: "Newsreader", Georgia, serif;
+        --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+        --ease: cubic-bezier(.2, .7, .3, 1);
       }
 
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        color: var(--text);
-        background: #fff;
-        font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: var(--sans);
+        font-size: 16.5px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
-      a { color: var(--link); text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
-      .container { width: min(920px, calc(100% - 40px)); margin: 0 auto; }
+      ::selection { background: var(--accent-tint); color: var(--accent); }
 
-      header { padding: 30px 0; }
-      nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-      .name { color: var(--text); font-size: 1rem; font-weight: 650; }
-      .name:hover { text-decoration: none; }
-      .nav-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: .9rem; }
+      h1, h2, h3, p { margin-top: 0; }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+      .container { width: min(880px, calc(100% - 44px)); margin: 0 auto; }
 
+      /* Links that draw their underline on hover. */
+      .ul {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size: 0 1px;
+        transition: background-size .28s var(--ease), color .18s var(--ease);
+      }
+      .ul:hover { background-size: 100% 1px; color: var(--accent); }
+
+      /* Prose links stay underlined; the tint appears on hover. */
+      .prose a {
+        color: var(--accent);
+        border-bottom: 1px solid #d9bccd;
+        transition: background .18s var(--ease), border-color .18s var(--ease);
+      }
+      .prose a:hover { background: var(--accent-tint); border-color: var(--accent); }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in srgb, var(--paper) 88%, transparent);
+        backdrop-filter: saturate(1.4) blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 17px 0;
+      }
+      .brand { font-family: var(--serif); font-size: 1.16rem; letter-spacing: -.01em; }
+      .brand em { font-style: italic; color: var(--accent); }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-family: var(--mono);
+        font-size: .74rem;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      section { scroll-margin-top: 70px; }
+
+      /* ---------- intro ---------- */
       .intro {
         display: grid;
-        grid-template-columns: 190px minmax(0, 1fr);
-        gap: 42px;
+        grid-template-columns: 168px minmax(0, 1fr);
+        gap: 40px;
         align-items: start;
-        padding: 60px 0 72px;
+        padding: 68px 0 74px;
       }
       .portrait {
         display: block;
-        width: 190px;
+        width: 100%;
         height: auto;
-        border-radius: 5px;
+        border-radius: 4px;
+        filter: saturate(.95);
+        transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+      }
+      .portrait:hover {
+        transform: translateY(-3px) rotate(-.6deg);
+        box-shadow: -6px 10px 0 -2px var(--accent-tint);
       }
       h1 {
-        margin: -8px 0 6px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.35rem, 6vw, 3.6rem);
+        margin: -12px 0 10px;
+        font-family: var(--serif);
+        font-size: clamp(2.6rem, 5.6vw, 4rem);
         font-weight: 400;
-        line-height: 1.15;
-        letter-spacing: -.025em;
+        line-height: 1.02;
+        letter-spacing: -.028em;
       }
-      .role { margin: 0 0 22px; color: var(--muted); font-size: 1.05rem; }
-      .bio { margin: 0 0 13px; }
-      .links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 22px; font-size: .9rem; }
+      h1 em { font-style: italic; color: var(--accent); }
+      .role {
+        margin: 0 0 20px;
+        font-family: var(--mono);
+        font-size: .76rem;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .prose p { margin: 0 0 13px; max-width: 60ch; color: #33312e; }
+      .prose p:last-child { margin-bottom: 0; }
+      .social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 24px;
+        font-family: var(--mono);
+        font-size: .76rem;
+        color: var(--muted);
+      }
 
-      section { padding: 58px 0; border-top: 1px solid var(--line); }
+      /* ---------- sections ---------- */
+      .band { padding: 54px 0; border-top: 1px solid var(--line); }
+      .band-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
       h2 {
-        margin: 0 0 28px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.8rem;
+        margin: 0;
+        font-family: var(--serif);
+        font-size: 1.95rem;
         font-weight: 400;
+        letter-spacing: -.02em;
       }
-      .news { margin: 0; padding: 0; list-style: none; }
-      .news li { display: grid; grid-template-columns: 110px 1fr; gap: 20px; margin: 0 0 12px; }
-      .news time { color: var(--muted); font-size: .86rem; }
+      .band-head > a { font-family: var(--mono); font-size: .74rem; color: var(--muted); }
 
-      .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
-      .section-heading a { font-size: .86rem; }
-      .year { margin: 36px 0 4px; color: var(--muted); font-size: .78rem; font-weight: 650; letter-spacing: .08em; }
+      /* ---------- news ---------- */
+      .news { margin: 0; padding: 0; list-style: none; }
+      .news li {
+        display: grid;
+        grid-template-columns: 104px minmax(0, 1fr);
+        gap: 22px;
+        padding: 11px 0;
+        border-bottom: 1px dotted var(--line);
+      }
+      .news li:last-child { border-bottom: 0; }
+      .news time {
+        font-family: var(--mono);
+        font-size: .73rem;
+        color: var(--faint);
+        letter-spacing: .03em;
+        padding-top: .18em;
+      }
+
+      /* ---------- publications ---------- */
+      .year {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 34px 0 2px;
+        font-family: var(--mono);
+        font-size: .73rem;
+        letter-spacing: .12em;
+        color: var(--faint);
+      }
+      .year::after { content: ""; flex: 1; height: 1px; background: var(--line); }
       .publication {
         display: grid;
-        grid-template-columns: 180px minmax(0, 1fr);
-        gap: 25px;
-        padding: 25px 0;
+        grid-template-columns: 172px minmax(0, 1fr);
+        gap: 26px;
+        padding: 22px 0;
         border-bottom: 1px solid var(--line);
       }
+      .publication:last-child { border-bottom: 0; }
       .thumbnail {
         display: block;
         width: 100%;
         height: auto;
         border: 1px solid var(--line);
         border-radius: 3px;
+        background: #fff;
+        transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
       }
-      .publication h3 { margin: -3px 0 5px; font-size: 1.06rem; line-height: 1.42; }
-      .authors, .venue { margin: 0 0 3px; color: var(--muted); font-size: .86rem; line-height: 1.5; }
-      .authors strong { color: var(--text); font-weight: 650; }
-      .venue { color: var(--text); }
-      .venue .note { color: #9a532f; font-weight: 650; }
-      .paper-links { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 8px; font-size: .82rem; }
-
-      footer { padding: 38px 0 50px; color: var(--muted); font-size: .8rem; text-align: center; }
-
-      @media (max-width: 650px) {
-        .container { width: min(100% - 28px, 520px); }
-        header { padding: 22px 0; }
-        nav { flex-wrap: wrap; gap: 6px 16px; }
-        .nav-links { gap: 16px; font-size: .85rem; }
-        .intro { grid-template-columns: 112px minmax(0, 1fr); gap: 22px; padding: 38px 0 52px; }
-        .portrait { width: 112px; }
-        h1 { margin-top: -5px; font-size: 2rem; }
-        .role { font-size: .9rem; }
-        .intro .role, .intro .bio, .intro .links { grid-column: 1 / -1; margin-bottom: 0; }
-        .intro .links { margin-top: 0; }
-        .intro-copy { display: contents; }
-        section { padding: 46px 0; }
-        .news li { grid-template-columns: 1fr; gap: 0; margin-bottom: 17px; }
-        .publication { grid-template-columns: 104px minmax(0, 1fr); gap: 15px; }
-        .publication h3 { font-size: .95rem; }
-        .authors, .venue { font-size: .78rem; }
-        .paper-links { grid-column: 1 / -1; margin-top: 0; }
+      .publication:hover .thumbnail {
+        transform: translateY(-2px);
+        border-color: #d9bccd;
+        box-shadow: 0 4px 14px -8px rgba(26, 25, 23, .4);
+      }
+      .publication h3 {
+        margin: -2px 0 5px;
+        font-family: var(--serif);
+        font-size: 1.24rem;
+        font-weight: 500;
+        line-height: 1.28;
+        letter-spacing: -.012em;
+      }
+      .publication h3 a { transition: color .18s var(--ease); }
+      .publication:hover h3 a { color: var(--accent); }
+      .authors { margin: 0 0 4px; color: var(--muted); font-size: .855rem; line-height: 1.5; }
+      .authors strong { color: var(--ink); font-weight: 600; }
+      .venue {
+        margin: 0;
+        font-family: var(--mono);
+        font-size: .73rem;
+        color: var(--muted);
+        letter-spacing: .01em;
+      }
+      .note { color: var(--accent); }
+      .paper-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 10px;
+        font-family: var(--mono);
+        font-size: .73rem;
+        color: var(--muted);
       }
 
-      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      footer {
+        padding: 34px 0 46px;
+        border-top: 1px solid var(--line);
+        font-family: var(--mono);
+        font-size: .72rem;
+        color: var(--faint);
+        text-align: center;
+      }
+
+      /* ---------- phone ---------- */
+      @media (max-width: 620px) {
+        body { font-size: 16px; }
+        .container { width: calc(100% - 34px); }
+        nav { padding: 13px 0; gap: 5px 14px; flex-wrap: wrap; }
+        .nav-links { gap: 14px; font-size: .69rem; }
+
+        .intro {
+          grid-template-columns: 96px minmax(0, 1fr);
+          gap: 18px;
+          padding: 32px 0 40px;
+        }
+        h1 { margin: -6px 0 8px; font-size: 2.15rem; letter-spacing: -.022em; }
+        .portrait:hover { transform: none; box-shadow: none; }
+        .intro .role, .intro .prose, .intro .social { grid-column: 1 / -1; }
+        .role { margin: 0; }
+        .social { margin-top: 18px; gap: 14px 18px; }
+
+        .band { padding: 40px 0; }
+        .band-head { margin-bottom: 22px; }
+        h2 { font-size: 1.7rem; }
+
+        .news li { grid-template-columns: 1fr; gap: 2px; padding: 9px 0; }
+
+        /* Figures span the full width: several are extremely wide, and in a
+           narrow side column they collapse into unreadable slivers. */
+        .publication { grid-template-columns: 1fr; gap: 13px; padding: 20px 0; }
+        .publication h3 { font-size: 1.1rem; }
+        .paper-links { gap: 16px; margin-top: 9px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+          transition-duration: .01ms !important;
+          animation-duration: .01ms !important;
+        }
+        .portrait:hover, .publication:hover .thumbnail { transform: none; }
+      }
     </style>
   </head>
   <body>
-    <header class="container">
-      <nav aria-label="Primary navigation">
-        <a class="name" href="#">Jang Hyun Cho</a>
+    <header>
+      <nav class="container" aria-label="Primary">
+        <a class="brand" href="#top">Jang Hyun <em>Cho</em></a>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#news">News</a>
-          <a href="#publications">Publications</a>
-          <a href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Scholar ↗</a>
+          <a class="ul" href="#about">About</a>
+          <a class="ul" href="#news">News</a>
+          <a class="ul" href="#publications">Papers</a>
+          <a class="ul" href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Scholar ↗</a>
         </div>
       </nav>
     </header>
 
-    <main class="container">
-      <div class="intro" id="about">
+    <main class="container" id="top">
+      <section class="intro" id="about">
         <img class="portrait" src="assets/thumbs/face.webp" alt="Jang Hyun Cho" width="480" height="620">
         <div class="intro-copy">
-          <h1>Jang Hyun (Vincent) Cho</h1>
-          <p class="role">Research Scientist at Meta Superintelligence Labs (MSL)</p>
-          <p class="bio">I am on the multimodal pretraining team, building the next generation of <a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark</a>.</p>
-          <p class="bio">I received my Ph.D. in Computer Science from UT Austin, advised by Prof. <a href="https://www.philkr.net/" target="_blank" rel="noopener noreferrer">Philipp Krähenbühl</a>. Before that, I received my B.S. from Cornell University, where I worked with Prof. <a href="http://home.bharathh.info/" target="_blank" rel="noopener noreferrer">Bharath Hariharan</a> and Prof. <a href="https://www.cs.cornell.edu/~kb/" target="_blank" rel="noopener noreferrer">Kavita Bala</a>. I have previously worked at Meta FAIR and NVIDIA.</p>
-          <div class="links">
-            <a href="mailto:%6A%61%6E%67%68%79%75%6E%63%68%6F%37@%75%74%65%78%61%73.%65%64%75">Email</a>
-            <a href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            <a href="https://github.com/janghyuncho" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://twitter.com/vincent_jh_cho" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <h1>Jang Hyun <em>(Vincent)</em> Cho</h1>
+          <p class="role">Research Scientist · Meta Superintelligence Labs</p>
+          <div class="prose">
+            <p>I am on the multimodal pretraining team, building the next generation of <a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark</a>.</p>
+            <p>I received my Ph.D. in Computer Science from UT Austin, advised by Prof. <a href="https://www.philkr.net/" target="_blank" rel="noopener noreferrer">Philipp Krähenbühl</a>. Before that, I received my B.S. from Cornell University, where I worked with Prof. <a href="http://home.bharathh.info/" target="_blank" rel="noopener noreferrer">Bharath Hariharan</a> and Prof. <a href="https://www.cs.cornell.edu/~kb/" target="_blank" rel="noopener noreferrer">Kavita Bala</a>. I have previously worked at Meta FAIR and NVIDIA.</p>
+          </div>
+          <div class="social">
+            <a class="ul" href="mailto:%6A%61%6E%67%68%79%75%6E%63%68%6F%37@%75%74%65%78%61%73.%65%64%75">Email</a>
+            <a class="ul" href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
+            <a class="ul" href="https://github.com/janghyuncho" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="ul" href="https://twitter.com/vincent_jh_cho" target="_blank" rel="noopener noreferrer">Twitter</a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <section id="news">
-        <h2>News</h2>
+      <section class="band" id="news">
+        <div class="band-head"><h2>News</h2></div>
         <ul class="news">
           <li><time datetime="2025-12">Dec 2025</time><span>Perception Encoder was presented as an oral at NeurIPS 2025, and PerceptionLM as a spotlight.</span></li>
           <li><time datetime="2025-04">Apr 2025</time><span>I completed my Ph.D. defense at UT Austin.</span></li>
@@ -159,20 +338,20 @@
         </ul>
       </section>
 
-      <section id="publications">
-        <div class="section-heading">
+      <section class="band" id="publications">
+        <div class="band-head">
           <h2>Publications</h2>
-          <a href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+          <a class="ul" href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">All on Scholar ↗</a>
         </div>
 
         <p class="year">2026</p>
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/llama4.webp" alt="Llama 4 model family overview" width="480" height="270" loading="lazy">
           <div>
-            <h3>The Llama 4 Herd: Architecture, Training, Evaluation, and Deployment Notes</h3>
+            <h3><a href="https://scholar.google.com/scholar?q=The+Llama+4+Herd+Architecture+Training+Evaluation+and+Deployment+Notes" target="_blank" rel="noopener noreferrer">The Llama 4 Herd: Architecture, Training, Evaluation, and Deployment Notes</a></h3>
             <p class="authors">A. Adcock, A. Srivastava, A. Dubey, et al., including <strong>Jang Hyun Cho</strong></p>
             <p class="venue">Technical report, 2026</p>
-            <div class="paper-links"><a href="https://scholar.google.com/scholar?q=The+Llama+4+Herd+Architecture+Training+Evaluation+and+Deployment+Notes" target="_blank" rel="noopener noreferrer">scholar</a></div>
+            <div class="paper-links"><a class="ul" href="https://scholar.google.com/scholar?q=The+Llama+4+Herd+Architecture+Training+Evaluation+and+Deployment+Notes" target="_blank" rel="noopener noreferrer">scholar</a></div>
           </div>
         </article>
 
@@ -180,12 +359,12 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/perceptionlm.webp" alt="PerceptionLM teaser figure" width="480" height="239" loading="lazy">
           <div>
-            <h3>PerceptionLM: Open-Access Data and Models for Detailed Visual Understanding</h3>
+            <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/21f1c5bbf2519321c1bee9bfa9edcd46-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">PerceptionLM: Open-Access Data and Models for Detailed Visual Understanding</a></h3>
             <p class="authors"><strong>Jang Hyun Cho*</strong>, Andrea Madotto*, Effrosyni Mavroudi*, Triantafyllos Afouras*, Tushar Nagarajan*, Muhammad Maaz*, Yale Song*, Tengyu Ma*, et al.</p>
             <p class="venue">NeurIPS 2025 <span class="note">Spotlight</span> · *Joint first authors</p>
             <div class="paper-links">
-              <a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/21f1c5bbf2519321c1bee9bfa9edcd46-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://github.com/facebookresearch/perception_models" target="_blank" rel="noopener noreferrer">code</a>
+              <a class="ul" href="https://proceedings.neurips.cc/paper_files/paper/2025/file/21f1c5bbf2519321c1bee9bfa9edcd46-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://github.com/facebookresearch/perception_models" target="_blank" rel="noopener noreferrer">code</a>
             </div>
           </div>
         </article>
@@ -193,12 +372,12 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/perception_encoder.webp" alt="Perception Encoder teaser figure" width="480" height="105" loading="lazy">
           <div>
-            <h3>Perception Encoder: The Best Visual Embeddings Are Not at the Output of the Network</h3>
+            <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/57bc0a850255e2041341bf74c7e2b9fa-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">Perception Encoder: The Best Visual Embeddings Are Not at the Output of the Network</a></h3>
             <p class="authors">Daniel Bolya*, Po-Yao Huang*, Peize Sun*, <strong>Jang Hyun Cho*</strong>, Andrea Madotto*, Chen Wei, Tengyu Ma, Jiale Zhi, et al.</p>
             <p class="venue">NeurIPS 2025 <span class="note">Oral</span> · *Joint first authors</p>
             <div class="paper-links">
-              <a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/57bc0a850255e2041341bf74c7e2b9fa-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://github.com/facebookresearch/perception_models" target="_blank" rel="noopener noreferrer">code</a>
+              <a class="ul" href="https://proceedings.neurips.cc/paper_files/paper/2025/file/57bc0a850255e2041341bf74c7e2b9fa-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://github.com/facebookresearch/perception_models" target="_blank" rel="noopener noreferrer">code</a>
             </div>
           </div>
         </article>
@@ -206,22 +385,22 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/vila2.webp" alt="VILA squared teaser figure" width="480" height="96" loading="lazy">
           <div>
-            <h3>VILA²: VILA Augmented VILA</h3>
+            <h3><a href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">VILA²: VILA Augmented VILA</a></h3>
             <p class="authors">Yunhao Fang*, Ligeng Zhu*, Yao Lu, Yan Wang, Pavlo Molchanov, Jan Kautz, <strong>Jang Hyun Cho</strong>, Marco Pavone, Song Han, Hongxu Yin</p>
             <p class="venue">ICCV Workshops 2025 <span class="note">Oral</span></p>
-            <div class="paper-links"><a href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">paper</a></div>
+            <div class="paper-links"><a class="ul" href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">paper</a></div>
           </div>
         </article>
 
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/cubellm_teaser.webp" alt="Cube-LLM teaser animation" width="300" height="169" loading="lazy">
           <div>
-            <h3>Language-Image Models with 3D Understanding</h3>
+            <h3><a href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">Language-Image Models with 3D Understanding</a></h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Boris Ivanovic, Yulong Cao, Edward Schmerling, Yue Wang, Xinshuo Weng, Boyi Li, Yurong You, Philipp Krähenbühl, Yan Wang, Marco Pavone</p>
             <p class="venue">ICLR 2025</p>
             <div class="paper-links">
-              <a href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://janghyuncho.github.io/Cube-LLM" target="_blank" rel="noopener noreferrer">project</a>
+              <a class="ul" href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://janghyuncho.github.io/Cube-LLM" target="_blank" rel="noopener noreferrer">project</a>
             </div>
           </div>
         </article>
@@ -230,14 +409,14 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/decola.webp" alt="DECOLA teaser figure" width="480" height="310" loading="lazy">
           <div>
-            <h3>Language-Conditioned Detection Transformer</h3>
+            <h3><a href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">Language-Conditioned Detection Transformer</a></h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
             <p class="venue">CVPR 2024</p>
             <div class="paper-links">
-              <a href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://janghyuncho.github.io/DECOLA/" target="_blank" rel="noopener noreferrer">project</a>
-              <a href="https://github.com/janghyuncho/DECOLA" target="_blank" rel="noopener noreferrer">code</a>
-              <a href="assets/bibtex/decola_bib.txt">bibtex</a>
+              <a class="ul" href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://janghyuncho.github.io/DECOLA/" target="_blank" rel="noopener noreferrer">project</a>
+              <a class="ul" href="https://github.com/janghyuncho/DECOLA" target="_blank" rel="noopener noreferrer">code</a>
+              <a class="ul" href="assets/bibtex/decola_bib.txt">bibtex</a>
             </div>
           </div>
         </article>
@@ -246,14 +425,14 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/part_distillation.webp" alt="PartDistillation teaser figure" width="480" height="205" loading="lazy">
           <div>
-            <h3>PartDistillation: Learning Parts from Instance Segmentation</h3>
+            <h3><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">PartDistillation: Learning Parts from Instance Segmentation</a></h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl, Vignesh Ramanathan</p>
             <p class="venue">CVPR 2023</p>
             <div class="paper-links">
-              <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://janghyuncho.github.io/PartDistillation_website/" target="_blank" rel="noopener noreferrer">project</a>
-              <a href="https://github.com/facebookresearch/PartDistillation" target="_blank" rel="noopener noreferrer">code</a>
-              <a href="assets/bibtex/pd_bib.txt">bibtex</a>
+              <a class="ul" href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://janghyuncho.github.io/PartDistillation_website/" target="_blank" rel="noopener noreferrer">project</a>
+              <a class="ul" href="https://github.com/facebookresearch/PartDistillation" target="_blank" rel="noopener noreferrer">code</a>
+              <a class="ul" href="assets/bibtex/pd_bib.txt">bibtex</a>
             </div>
           </div>
         </article>
@@ -262,13 +441,13 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/nms.webp" alt="NMS Strikes Back teaser figure" width="480" height="248" loading="lazy">
           <div>
-            <h3>NMS Strikes Back</h3>
+            <h3><a href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">NMS Strikes Back</a></h3>
             <p class="authors">Jeffrey Ouyang-Zhang, <strong>Jang Hyun Cho</strong>, Xingyi Zhou, Philipp Krähenbühl</p>
             <p class="venue">arXiv 2022</p>
             <div class="paper-links">
-              <a href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://github.com/jozhang97/DETA" target="_blank" rel="noopener noreferrer">code</a>
-              <a href="assets/bibtex/nms_bib.txt">bibtex</a>
+              <a class="ul" href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://github.com/jozhang97/DETA" target="_blank" rel="noopener noreferrer">code</a>
+              <a class="ul" href="assets/bibtex/nms_bib.txt">bibtex</a>
             </div>
           </div>
         </article>
@@ -276,13 +455,13 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/ecm_loss.webp" alt="ECM-Loss teaser figure" width="480" height="339" loading="lazy">
           <div>
-            <h3>Long-Tail Detection with Effective Class-Margins</h3>
+            <h3><a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">Long-Tail Detection with Effective Class-Margins</a></h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
             <p class="venue">ECCV 2022 <span class="note">Oral</span></p>
             <div class="paper-links">
-              <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://github.com/janghyuncho/ECM-Loss" target="_blank" rel="noopener noreferrer">code</a>
-              <a href="assets/bibtex/ecm_bib.txt">bibtex</a>
+              <a class="ul" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://github.com/janghyuncho/ECM-Loss" target="_blank" rel="noopener noreferrer">code</a>
+              <a class="ul" href="assets/bibtex/ecm_bib.txt">bibtex</a>
             </div>
           </div>
         </article>
@@ -291,13 +470,13 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/picie.webp" alt="PiCIE teaser figure" width="480" height="307" loading="lazy">
           <div>
-            <h3>PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance in Clustering</h3>
+            <h3><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance in Clustering</a></h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Utkarsh Mall, Kavita Bala, Bharath Hariharan</p>
             <p class="venue">CVPR 2021</p>
             <div class="paper-links">
-              <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="https://github.com/janghyuncho/PiCIE" target="_blank" rel="noopener noreferrer">code</a>
-              <a href="assets/bibtex/picie_bib.txt">bibtex</a>
+              <a class="ul" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="https://github.com/janghyuncho/PiCIE" target="_blank" rel="noopener noreferrer">code</a>
+              <a class="ul" href="assets/bibtex/picie_bib.txt">bibtex</a>
             </div>
           </div>
         </article>
@@ -306,18 +485,18 @@
         <article class="publication">
           <img class="thumbnail" src="assets/thumbs/distillation.webp" alt="Knowledge distillation teaser figure" width="480" height="275" loading="lazy">
           <div>
-            <h3>On the Efficacy of Knowledge Distillation</h3>
+            <h3><a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">On the Efficacy of Knowledge Distillation</a></h3>
             <p class="authors"><strong>Jang Hyun Cho</strong>, Bharath Hariharan</p>
             <p class="venue">ICCV 2019</p>
             <div class="paper-links">
-              <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a href="assets/bibtex/kd_bib.txt">bibtex</a>
+              <a class="ul" href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+              <a class="ul" href="assets/bibtex/kd_bib.txt">bibtex</a>
             </div>
           </div>
         </article>
       </section>
     </main>
 
-    <footer class="container">Last updated August 2026 · © Jang Hyun (Vincent) Cho</footer>
+    <footer class="container">Last updated August 2026</footer>
   </body>
 </html>
