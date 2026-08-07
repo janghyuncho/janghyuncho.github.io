@@ -24,6 +24,7 @@ ANIMATED_QUALITY = 55
 
 STILLS = [
     "images/face.png",
+    "images/llama4.png",
     "images/perceptionlm.png",
     "images/perception_encoder.png",
     "images/vila2.png",
