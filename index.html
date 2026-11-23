@@ -205,14 +205,13 @@
       }
       .model .thumbnail { border-radius: 4px; }
       .model h3 {
-        margin: -3px 0 2px;
+        margin: -3px 0 4px;
         font-family: var(--serif);
         font-size: 1.12rem;
         font-weight: 500;
         letter-spacing: -.01em;
       }
       .model:hover h3 a { color: var(--accent); }
-      .model .summary { font-size: .8rem; margin-bottom: 3px; }
       .model .paper-links { margin-top: 4px; gap: 12px; }
 
       /* ---------- publications ---------- */
@@ -259,7 +258,7 @@
       }
       .publication h3 a { transition: color .18s var(--ease); }
       .publication:hover h3 a { color: var(--accent); }
-      .authors, .summary { margin: 0 0 4px; color: var(--muted); font-size: .855rem; line-height: 1.5; }
+      .authors { margin: 0 0 4px; color: var(--muted); font-size: .855rem; line-height: 1.5; }
       .authors strong { color: var(--ink); font-weight: 600; }
       .venue {
         margin: 0;
@@ -357,7 +356,7 @@
           <h1>Jang Hyun <em>(Vincent)</em> Cho</h1>
           <p class="role">Member of Technical Staff · Thinking Machines Lab</p>
           <div class="prose">
-            <p>I work on multimodal research at <a href="https://thinkingmachines.ai/" target="_blank" rel="noopener noreferrer">Thinking Machines Lab</a>, where I contributed to <a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2 Small</a> and <a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">Inkling 2 Mini</a>. Previously, I was a Research Scientist at Meta Superintelligence Labs, contributing to multimodal pretraining for <a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark</a> and <a href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">Muse Wonder</a>.</p>
+            <p>I work on multimodal research at <a href="https://thinkingmachines.ai/" target="_blank" rel="noopener noreferrer">Thinking Machines Lab</a>. Previously, I was a Research Scientist at Meta Superintelligence Labs.</p>
             <p>I received my Ph.D. in Computer Science from UT Austin, advised by Prof. <a href="https://www.philkr.net/" target="_blank" rel="noopener noreferrer">Philipp Krähenbühl</a>. Before that, I received my B.S. from Cornell University, where I worked with Prof. <a href="http://home.bharathh.info/" target="_blank" rel="noopener noreferrer">Bharath Hariharan</a> and Prof. <a href="https://www.cs.cornell.edu/~kb/" target="_blank" rel="noopener noreferrer">Kavita Bala</a>. Earlier, I also worked at Meta FAIR and NVIDIA.</p>
           </div>
           <div class="social">
@@ -390,11 +389,9 @@
             <img class="thumbnail" src="assets/thumbs/inkling2_mini.webp" alt="Inkling 2 Mini graphic" width="480" height="252" loading="lazy">
             <div>
               <h3><a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">Inkling 2 Mini</a></h3>
-              <p class="summary">Open-weights looped-transformer MoE (26.4B total, 3.4B active) for local inference and agentic coding.</p>
               <p class="venue">Thinking Machines · Nov 2026</p>
               <div class="paper-links">
-                <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">blog</a>
-                <a class="ul" href="https://huggingface.co/thinkingmachines/Inkling-2-Mini" target="_blank" rel="noopener noreferrer">weights</a>
+                <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">page</a>
                 <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-mini/" target="_blank" rel="noopener noreferrer">model card</a>
               </div>
             </div>
@@ -403,11 +400,9 @@
             <img class="thumbnail" src="assets/thumbs/inkling2_small.webp" alt="Inkling 2 Small graphic" width="480" height="252" loading="lazy">
             <div>
               <h3><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2 Small</a></h3>
-              <p class="summary">Open-weights multimodal MoE (594B total, 17B active) trained natively in NVFP4 for agentic coding and vision.</p>
               <p class="venue">Thinking Machines · Nov 2026</p>
               <div class="paper-links">
-                <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">blog</a>
-                <a class="ul" href="https://huggingface.co/thinkingmachines/Inkling-2-Small" target="_blank" rel="noopener noreferrer">weights</a>
+                <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">page</a>
                 <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-small/" target="_blank" rel="noopener noreferrer">model card</a>
               </div>
             </div>
@@ -416,10 +411,9 @@
             <img class="thumbnail" src="assets/thumbs/muse_wonder.webp" alt="Muse Wonder graphic" width="480" height="252" loading="lazy">
             <div>
               <h3><a href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">Muse Wonder</a></h3>
-              <p class="summary">Frontier multimodal models across text, image, video, and audio. Contributed to multimodal pretraining.</p>
               <p class="venue">Meta MSL · Oct 2026</p>
               <div class="paper-links">
-                <a class="ul" href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">blog</a>
+                <a class="ul" href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">page</a>
                 <a class="ul" href="https://research.meta.ai/static/muse-wonder-model-card" target="_blank" rel="noopener noreferrer">model card</a>
               </div>
             </div>
@@ -428,10 +422,10 @@
             <img class="thumbnail" src="assets/thumbs/muse_spark.webp" alt="Muse Spark graphic" width="480" height="270" loading="lazy">
             <div>
               <h3><a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark</a></h3>
-              <p class="summary">Natively multimodal reasoning model with visual chain-of-thought. Contributed to multimodal pretraining.</p>
               <p class="venue">Meta MSL · Apr 2026</p>
               <div class="paper-links">
-                <a class="ul" href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">blog</a>
+                <a class="ul" href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">page</a>
+                <a class="ul" href="https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/" target="_blank" rel="noopener noreferrer">report</a>
               </div>
             </div>
           </article>
