@@ -139,12 +139,20 @@
       .social {
         display: flex;
         flex-wrap: wrap;
-        gap: 18px;
-        margin-top: 14px;
+        gap: 8px;
+        margin-top: 16px;
         font-family: var(--mono);
-        font-size: .76rem;
+        font-size: .72rem;
         color: var(--muted);
       }
+      .social a {
+        padding: 3px 11px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        transition: color .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease);
+      }
+      .social a:hover { color: var(--accent); border-color: #d9bccd; background: var(--accent-tint); }
 
       /* ---------- sections ---------- */
       .band { padding: 32px 0; border-top: 1px solid var(--line); }
@@ -184,35 +192,39 @@
       /* ---------- model releases ---------- */
       .models {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 12px;
       }
       .model {
-        display: grid;
-        grid-template-columns: 116px minmax(0, 1fr);
-        gap: 14px;
-        align-items: start;
-        padding: 12px;
+        overflow: hidden;
         border: 1px solid var(--line);
-        border-radius: 6px;
+        border-radius: 8px;
         background: #fff;
         transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
       }
       .model:hover {
         border-color: #d9bccd;
-        box-shadow: 0 6px 18px -12px rgba(26, 25, 23, .45);
-        transform: translateY(-1px);
+        box-shadow: 0 8px 22px -14px rgba(26, 25, 23, .5);
+        transform: translateY(-2px);
       }
-      .model .thumbnail { border-radius: 4px; }
+      .model .thumbnail {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        border-radius: 0;
+      }
+      .model-body { padding: 9px 12px 11px; }
       .model h3 {
-        margin: -3px 0 4px;
+        margin: 0 0 1px;
         font-family: var(--serif);
-        font-size: 1.12rem;
+        font-size: 1.08rem;
         font-weight: 500;
         letter-spacing: -.01em;
       }
       .model:hover h3 a { color: var(--accent); }
-      .model .paper-links { margin-top: 4px; gap: 12px; }
+      .model .venue { font-size: .68rem; }
+      .model .paper-links { margin-top: 5px; gap: 12px; font-size: .7rem; }
 
       /* ---------- publications ---------- */
       .year {
@@ -228,8 +240,9 @@
       .year::after { content: ""; flex: 1; height: 1px; background: var(--line); }
       .publication {
         display: grid;
-        grid-template-columns: 148px minmax(0, 1fr);
-        gap: 22px;
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 20px;
+        align-items: start;
         padding: 14px 0;
         border-bottom: 1px solid var(--line);
       }
@@ -239,9 +252,15 @@
         width: 100%;
         height: auto;
         border: 1px solid var(--line);
-        border-radius: 3px;
+        border-radius: 5px;
         background: #fff;
         transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+      }
+      /* A uniform frame keeps rows aligned; contain shows wide figures whole. */
+      .publication .thumbnail {
+        aspect-ratio: 5 / 3;
+        object-fit: contain;
+        padding: 4px;
       }
       .publication:hover .thumbnail {
         transform: translateY(-2px);
@@ -315,14 +334,13 @@
 
         .news li { grid-template-columns: 62px minmax(0, 1fr); gap: 10px; padding: 4px 0; font-size: .9rem; }
 
-        .models { grid-template-columns: 1fr; gap: 10px; }
-        .model { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; padding: 10px; }
+        .models { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+        .model-body { padding: 8px 10px 10px; }
 
-        /* Figures span the full width: several are extremely wide, and in a
-           narrow side column they collapse into unreadable slivers. */
-        .publication { grid-template-columns: 1fr; gap: 10px; padding: 16px 0; }
-        .publication h3 { font-size: 1.06rem; }
-        .paper-links { gap: 16px; margin-top: 6px; }
+        .publication { grid-template-columns: 100px minmax(0, 1fr); gap: 12px; padding: 12px 0; }
+        .publication h3 { font-size: 1rem; }
+        .authors { font-size: .8rem; }
+        .paper-links { gap: 14px; margin-top: 5px; }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -360,10 +378,10 @@
             <p>I received my Ph.D. in Computer Science from UT Austin, advised by Prof. <a href="https://www.philkr.net/" target="_blank" rel="noopener noreferrer">Philipp Krähenbühl</a>. Before that, I received my B.S. from Cornell University, where I worked with Prof. <a href="http://home.bharathh.info/" target="_blank" rel="noopener noreferrer">Bharath Hariharan</a> and Prof. <a href="https://www.cs.cornell.edu/~kb/" target="_blank" rel="noopener noreferrer">Kavita Bala</a>. Earlier, I also worked at Meta FAIR and NVIDIA.</p>
           </div>
           <div class="social">
-            <a class="ul" href="mailto:%6A%61%6E%67%68%79%75%6E%63%68%6F%37@%75%74%65%78%61%73.%65%64%75">Email</a>
-            <a class="ul" href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
-            <a class="ul" href="https://github.com/janghyuncho" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="ul" href="https://twitter.com/vincent_jh_cho" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="mailto:%6A%61%6E%67%68%79%75%6E%63%68%6F%37@%75%74%65%78%61%73.%65%64%75">Email</a>
+            <a href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
+            <a href="https://github.com/janghyuncho" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/vincent_jh_cho" target="_blank" rel="noopener noreferrer">Twitter</a>
           </div>
         </div>
       </section>
@@ -387,9 +405,9 @@
         <div class="models">
           <article class="model">
             <img class="thumbnail" src="assets/thumbs/inkling2_mini.webp" alt="Inkling 2 Mini graphic" width="480" height="252" loading="lazy">
-            <div>
+            <div class="model-body">
               <h3><a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">Inkling 2 Mini</a></h3>
-              <p class="venue">Thinking Machines · Nov 2026</p>
+              <p class="venue">Thinking Machines<br>Nov 2026</p>
               <div class="paper-links">
                 <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">page</a>
                 <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-mini/" target="_blank" rel="noopener noreferrer">model card</a>
@@ -398,9 +416,9 @@
           </article>
           <article class="model">
             <img class="thumbnail" src="assets/thumbs/inkling2_small.webp" alt="Inkling 2 Small graphic" width="480" height="252" loading="lazy">
-            <div>
+            <div class="model-body">
               <h3><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2 Small</a></h3>
-              <p class="venue">Thinking Machines · Nov 2026</p>
+              <p class="venue">Thinking Machines<br>Nov 2026</p>
               <div class="paper-links">
                 <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">page</a>
                 <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-small/" target="_blank" rel="noopener noreferrer">model card</a>
@@ -409,9 +427,9 @@
           </article>
           <article class="model">
             <img class="thumbnail" src="assets/thumbs/muse_wonder.webp" alt="Muse Wonder graphic" width="480" height="252" loading="lazy">
-            <div>
+            <div class="model-body">
               <h3><a href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">Muse Wonder</a></h3>
-              <p class="venue">Meta MSL · Oct 2026</p>
+              <p class="venue">Meta MSL<br>Oct 2026</p>
               <div class="paper-links">
                 <a class="ul" href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">page</a>
                 <a class="ul" href="https://research.meta.ai/static/muse-wonder-model-card" target="_blank" rel="noopener noreferrer">model card</a>
@@ -420,9 +438,9 @@
           </article>
           <article class="model">
             <img class="thumbnail" src="assets/thumbs/muse_spark.webp" alt="Muse Spark graphic" width="480" height="270" loading="lazy">
-            <div>
+            <div class="model-body">
               <h3><a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark</a></h3>
-              <p class="venue">Meta MSL · Apr 2026</p>
+              <p class="venue">Meta MSL<br>Apr 2026</p>
               <div class="paper-links">
                 <a class="ul" href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">page</a>
                 <a class="ul" href="https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/" target="_blank" rel="noopener noreferrer">report</a>
