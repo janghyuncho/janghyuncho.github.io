@@ -260,8 +260,8 @@
         gap: 12px;
       }
       .model {
-        display: grid;
-        grid-template-columns: 132px minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -285,12 +285,24 @@
         box-shadow: 0 8px 22px -14px rgba(26, 25, 23, .5);
         transform: translateY(-2px);
       }
-      .model .thumbnail {
-        height: 100%;
-        object-fit: cover;
+      /* The embeds lay out at twice the card size and are scaled down, so their
+         typography and strokes keep the proportions of the original pages. */
+      .model-media {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+      }
+      .model-media iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
         border: 0;
-        border-right: 1px solid var(--line);
-        border-radius: 0;
+        transform: scale(.5);
+        transform-origin: 0 0;
       }
       .model-body { padding: 10px 14px 12px; }
       .model h3 {
@@ -485,7 +497,6 @@
         .news li { grid-template-columns: 62px minmax(0, 1fr); gap: 10px; padding: 4px 0; font-size: .9rem; }
 
         .models { grid-template-columns: 1fr; gap: 10px; }
-        .model { grid-template-columns: 104px minmax(0, 1fr); }
         .model-body { padding: 8px 12px 10px; }
 
         .featured { grid-template-columns: 1fr; gap: 0; padding: 0; }
@@ -563,7 +574,7 @@
         <div class="band-head"><h2>Model Releases</h2></div>
         <div class="models">
           <article class="model">
-            <img class="thumbnail" src="assets/thumbs/inkling2_small.webp" alt="Inkling 2 graphic" width="480" height="252" loading="lazy">
+            <div class="model-media"><iframe src="assets/embeds/inkling-2/" title="Interactive Inkling 2 artwork from Thinking Machines Lab" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></div>
             <div class="model-body">
               <h3><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2</a></h3>
               <p class="venue">Thinking Machines Lab</p>
@@ -574,7 +585,7 @@
             </div>
           </article>
           <article class="model">
-            <img class="thumbnail" src="assets/thumbs/muse_spark.webp" alt="Muse Spark graphic" width="480" height="270" loading="lazy">
+            <div class="model-media"><iframe src="assets/embeds/muse-wonder/" title="Animated Muse Wonder typographic artwork from Meta Superintelligence Labs" loading="lazy" sandbox="allow-scripts" data-ecto1></iframe></div>
             <div class="model-body">
               <h3><a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark &amp; Wonder</a></h3>
               <p class="venue">Meta Superintelligence Labs</p>
@@ -781,6 +792,23 @@
           el.style.transitionDelay = (i % 4) * 60 + "ms";
           reveal.observe(el);
         });
+
+        // The Muse Wonder artwork stays paused when framed until its host reports it visible.
+        const artworks = document.querySelectorAll("iframe[data-ecto1]");
+        const setActive = (frame, active) =>
+          frame.contentWindow?.postMessage({ type: "ecto1:html-artifact-activity", active }, "*");
+        const activity = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            entry.target.dataset.visible = entry.isIntersecting ? "1" : "";
+            setActive(entry.target, entry.isIntersecting && !document.hidden);
+          }
+        });
+        artworks.forEach((frame) => {
+          frame.addEventListener("load", () => setActive(frame, frame.dataset.visible === "1"));
+          activity.observe(frame);
+        });
+        document.addEventListener("visibilitychange", () =>
+          artworks.forEach((frame) => setActive(frame, frame.dataset.visible === "1" && !document.hidden)));
 
         const links = new Map([...document.querySelectorAll('.nav-links a[href^="#"]')]
           .map((a) => [a.getAttribute("href").slice(1), a]));
