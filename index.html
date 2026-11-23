@@ -33,8 +33,8 @@
         color: var(--ink);
         background: var(--paper);
         font-family: var(--sans);
-        font-size: 16.5px;
-        line-height: 1.65;
+        font-size: 16px;
+        line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
       }
@@ -47,7 +47,7 @@
         outline-offset: 3px;
         border-radius: 2px;
       }
-      .container { width: min(880px, calc(100% - 44px)); margin: 0 auto; }
+      .container { width: min(840px, calc(100% - 44px)); margin: 0 auto; }
 
       /* Links that draw their underline on hover. */
       .ul {
@@ -80,7 +80,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 18px;
-        padding: 17px 0;
+        padding: 12px 0;
       }
       .brand { font-family: var(--serif); font-size: 1.16rem; letter-spacing: -.01em; }
       .brand em { font-style: italic; color: var(--accent); }
@@ -95,15 +95,15 @@
         color: var(--muted);
       }
 
-      section { scroll-margin-top: 70px; }
+      section { scroll-margin-top: 56px; }
 
       /* ---------- intro ---------- */
       .intro {
         display: grid;
-        grid-template-columns: 168px minmax(0, 1fr);
-        gap: 40px;
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 34px;
         align-items: start;
-        padding: 68px 0 74px;
+        padding: 42px 0 38px;
       }
       .portrait {
         display: block;
@@ -118,47 +118,47 @@
         box-shadow: -6px 10px 0 -2px var(--accent-tint);
       }
       h1 {
-        margin: -12px 0 10px;
+        margin: -8px 0 6px;
         font-family: var(--serif);
-        font-size: clamp(2.6rem, 5.6vw, 4rem);
+        font-size: clamp(2.3rem, 4.8vw, 3.3rem);
         font-weight: 400;
         line-height: 1.02;
         letter-spacing: -.028em;
       }
       h1 em { font-style: italic; color: var(--accent); }
       .role {
-        margin: 0 0 20px;
+        margin: 0 0 14px;
         font-family: var(--mono);
-        font-size: .76rem;
+        font-size: .74rem;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: var(--muted);
+        color: var(--accent);
       }
-      .prose p { margin: 0 0 13px; max-width: 60ch; color: #33312e; }
+      .prose p { margin: 0 0 10px; max-width: 64ch; color: #33312e; }
       .prose p:last-child { margin-bottom: 0; }
       .social {
         display: flex;
         flex-wrap: wrap;
         gap: 18px;
-        margin-top: 24px;
+        margin-top: 14px;
         font-family: var(--mono);
         font-size: .76rem;
         color: var(--muted);
       }
 
       /* ---------- sections ---------- */
-      .band { padding: 54px 0; border-top: 1px solid var(--line); }
+      .band { padding: 32px 0; border-top: 1px solid var(--line); }
       .band-head {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
         gap: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 14px;
       }
       h2 {
         margin: 0;
         font-family: var(--serif);
-        font-size: 1.95rem;
+        font-size: 1.6rem;
         font-weight: 400;
         letter-spacing: -.02em;
       }
@@ -168,26 +168,59 @@
       .news { margin: 0; padding: 0; list-style: none; }
       .news li {
         display: grid;
-        grid-template-columns: 104px minmax(0, 1fr);
-        gap: 22px;
-        padding: 11px 0;
-        border-bottom: 1px dotted var(--line);
+        grid-template-columns: 82px minmax(0, 1fr);
+        gap: 18px;
+        padding: 5px 0;
+        font-size: .94rem;
       }
-      .news li:last-child { border-bottom: 0; }
       .news time {
         font-family: var(--mono);
-        font-size: .73rem;
+        font-size: .72rem;
         color: var(--faint);
         letter-spacing: .03em;
-        padding-top: .18em;
+        padding-top: .2em;
       }
+
+      /* ---------- model releases ---------- */
+      .models {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .model {
+        display: grid;
+        grid-template-columns: 116px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fff;
+        transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+      }
+      .model:hover {
+        border-color: #d9bccd;
+        box-shadow: 0 6px 18px -12px rgba(26, 25, 23, .45);
+        transform: translateY(-1px);
+      }
+      .model .thumbnail { border-radius: 4px; }
+      .model h3 {
+        margin: -3px 0 2px;
+        font-family: var(--serif);
+        font-size: 1.12rem;
+        font-weight: 500;
+        letter-spacing: -.01em;
+      }
+      .model:hover h3 a { color: var(--accent); }
+      .model .summary { font-size: .8rem; margin-bottom: 3px; }
+      .model .paper-links { margin-top: 4px; gap: 12px; }
 
       /* ---------- publications ---------- */
       .year {
         display: flex;
         align-items: center;
         gap: 14px;
-        margin: 34px 0 2px;
+        margin: 16px 0 0;
         font-family: var(--mono);
         font-size: .73rem;
         letter-spacing: .12em;
@@ -196,9 +229,9 @@
       .year::after { content: ""; flex: 1; height: 1px; background: var(--line); }
       .publication {
         display: grid;
-        grid-template-columns: 172px minmax(0, 1fr);
-        gap: 26px;
-        padding: 22px 0;
+        grid-template-columns: 148px minmax(0, 1fr);
+        gap: 22px;
+        padding: 14px 0;
         border-bottom: 1px solid var(--line);
       }
       .publication:last-child { border-bottom: 0; }
@@ -217,9 +250,9 @@
         box-shadow: 0 4px 14px -8px rgba(26, 25, 23, .4);
       }
       .publication h3 {
-        margin: -2px 0 5px;
+        margin: -3px 0 3px;
         font-family: var(--serif);
-        font-size: 1.24rem;
+        font-size: 1.14rem;
         font-weight: 500;
         line-height: 1.28;
         letter-spacing: -.012em;
@@ -240,14 +273,14 @@
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
-        margin-top: 10px;
+        margin-top: 6px;
         font-family: var(--mono);
         font-size: .73rem;
         color: var(--muted);
       }
 
       footer {
-        padding: 34px 0 46px;
+        padding: 22px 0 30px;
         border-top: 1px solid var(--line);
         font-family: var(--mono);
         font-size: .72rem;
@@ -257,17 +290,18 @@
 
       /* ---------- phone ---------- */
       @media (max-width: 620px) {
-        body { font-size: 16px; }
-        .container { width: calc(100% - 34px); }
-        nav { padding: 13px 0; gap: 5px 14px; flex-wrap: wrap; }
+        body { font-size: 15.5px; }
+        .container { width: calc(100% - 32px); }
+        nav { padding: 10px 0; gap: 4px 14px; flex-wrap: wrap; }
         .nav-links { gap: 14px; font-size: .69rem; }
 
         .intro {
-          grid-template-columns: 96px minmax(0, 1fr);
-          gap: 18px;
-          padding: 32px 0 40px;
+          grid-template-columns: 84px minmax(0, 1fr);
+          gap: 12px 16px;
+          align-items: center;
+          padding: 22px 0 26px;
         }
-        h1 { margin: -6px 0 0; font-size: 2.1rem; letter-spacing: -.022em; }
+        h1 { margin: 0; font-size: 1.95rem; letter-spacing: -.022em; }
         .portrait:hover { transform: none; box-shadow: none; }
         /* Only the name sits beside the portrait; everything else runs the
            full width, or the prose is squeezed into a ~140px column. */
@@ -276,17 +310,20 @@
         .role { margin: 0; }
         .social { margin-top: 0; gap: 14px 18px; }
 
-        .band { padding: 40px 0; }
-        .band-head { margin-bottom: 22px; }
-        h2 { font-size: 1.7rem; }
+        .band { padding: 24px 0; }
+        .band-head { margin-bottom: 10px; }
+        h2 { font-size: 1.45rem; }
 
-        .news li { grid-template-columns: 1fr; gap: 2px; padding: 9px 0; }
+        .news li { grid-template-columns: 62px minmax(0, 1fr); gap: 10px; padding: 4px 0; font-size: .9rem; }
+
+        .models { grid-template-columns: 1fr; gap: 10px; }
+        .model { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; padding: 10px; }
 
         /* Figures span the full width: several are extremely wide, and in a
            narrow side column they collapse into unreadable slivers. */
-        .publication { grid-template-columns: 1fr; gap: 13px; padding: 20px 0; }
-        .publication h3 { font-size: 1.1rem; }
-        .paper-links { gap: 16px; margin-top: 9px; }
+        .publication { grid-template-columns: 1fr; gap: 10px; padding: 16px 0; }
+        .publication h3 { font-size: 1.06rem; }
+        .paper-links { gap: 16px; margin-top: 6px; }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -295,7 +332,7 @@
           transition-duration: .01ms !important;
           animation-duration: .01ms !important;
         }
-        .portrait:hover, .publication:hover .thumbnail { transform: none; }
+        .portrait:hover, .publication:hover .thumbnail, .model:hover { transform: none; }
       }
     </style>
   </head>
@@ -347,62 +384,58 @@
       </section>
 
       <section class="band" id="models">
-        <div class="band-head">
-          <h2>Model Releases</h2>
+        <div class="band-head"><h2>Model Releases</h2></div>
+        <div class="models">
+          <article class="model">
+            <img class="thumbnail" src="assets/thumbs/inkling2_mini.webp" alt="Inkling 2 Mini graphic" width="480" height="252" loading="lazy">
+            <div>
+              <h3><a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">Inkling 2 Mini</a></h3>
+              <p class="summary">Open-weights looped-transformer MoE (26.4B total, 3.4B active) for local inference and agentic coding.</p>
+              <p class="venue">Thinking Machines · Nov 2026</p>
+              <div class="paper-links">
+                <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">blog</a>
+                <a class="ul" href="https://huggingface.co/thinkingmachines/Inkling-2-Mini" target="_blank" rel="noopener noreferrer">weights</a>
+                <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-mini/" target="_blank" rel="noopener noreferrer">model card</a>
+              </div>
+            </div>
+          </article>
+          <article class="model">
+            <img class="thumbnail" src="assets/thumbs/inkling2_small.webp" alt="Inkling 2 Small graphic" width="480" height="252" loading="lazy">
+            <div>
+              <h3><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2 Small</a></h3>
+              <p class="summary">Open-weights multimodal MoE (594B total, 17B active) trained natively in NVFP4 for agentic coding and vision.</p>
+              <p class="venue">Thinking Machines · Nov 2026</p>
+              <div class="paper-links">
+                <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">blog</a>
+                <a class="ul" href="https://huggingface.co/thinkingmachines/Inkling-2-Small" target="_blank" rel="noopener noreferrer">weights</a>
+                <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-small/" target="_blank" rel="noopener noreferrer">model card</a>
+              </div>
+            </div>
+          </article>
+          <article class="model">
+            <img class="thumbnail" src="assets/thumbs/muse_wonder.webp" alt="Muse Wonder graphic" width="480" height="252" loading="lazy">
+            <div>
+              <h3><a href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">Muse Wonder</a></h3>
+              <p class="summary">Frontier multimodal models across text, image, video, and audio. Contributed to multimodal pretraining.</p>
+              <p class="venue">Meta MSL · Oct 2026</p>
+              <div class="paper-links">
+                <a class="ul" href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">blog</a>
+                <a class="ul" href="https://research.meta.ai/static/muse-wonder-model-card" target="_blank" rel="noopener noreferrer">model card</a>
+              </div>
+            </div>
+          </article>
+          <article class="model">
+            <img class="thumbnail" src="assets/thumbs/muse_spark.webp" alt="Muse Spark graphic" width="480" height="270" loading="lazy">
+            <div>
+              <h3><a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark</a></h3>
+              <p class="summary">Natively multimodal reasoning model with visual chain-of-thought. Contributed to multimodal pretraining.</p>
+              <p class="venue">Meta MSL · Apr 2026</p>
+              <div class="paper-links">
+                <a class="ul" href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">blog</a>
+              </div>
+            </div>
+          </article>
         </div>
-
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/inkling2_mini.webp" alt="Inkling 2 Mini graphic" width="480" height="252" loading="lazy">
-          <div>
-            <h3><a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">Inkling 2 Mini</a></h3>
-            <p class="summary">Open-weights multimodal looped-transformer MoE (26.4B total, 3.4B active, 1M context) designed for local inference and agentic coding.</p>
-            <p class="venue">Thinking Machines Lab · Nov 2026 · <span class="note">Apache 2.0</span></p>
-            <div class="paper-links">
-              <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener noreferrer">blog</a>
-              <a class="ul" href="https://huggingface.co/thinkingmachines/Inkling-2-Mini" target="_blank" rel="noopener noreferrer">weights</a>
-              <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-mini/" target="_blank" rel="noopener noreferrer">model card</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/inkling2_small.webp" alt="Inkling 2 Small graphic" width="480" height="252" loading="lazy">
-          <div>
-            <h3><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2 Small</a></h3>
-            <p class="summary">Open-weights multimodal MoE (594B total, 17B active, 1M context) trained end-to-end in native NVFP4 for agentic coding, vision, and knowledge work.</p>
-            <p class="venue">Thinking Machines Lab · Nov 2026 · <span class="note">Apache 2.0</span></p>
-            <div class="paper-links">
-              <a class="ul" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">blog</a>
-              <a class="ul" href="https://huggingface.co/thinkingmachines/Inkling-2-Small" target="_blank" rel="noopener noreferrer">weights</a>
-              <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-small/" target="_blank" rel="noopener noreferrer">model card</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/muse_wonder.webp" alt="Muse Wonder graphic" width="480" height="252" loading="lazy">
-          <div>
-            <h3><a href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">Muse Wonder</a></h3>
-            <p class="summary">Frontier multimodal model series (Muse Wonder &amp; Muse Wonder Full; text, image, video, audio; 1M context) for personal and professional agents. Contributed to multimodal pretraining.</p>
-            <p class="venue">Meta Superintelligence Labs · Oct 2026</p>
-            <div class="paper-links">
-              <a class="ul" href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">blog</a>
-              <a class="ul" href="https://research.meta.ai/static/muse-wonder-model-card" target="_blank" rel="noopener noreferrer">model card</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/muse_spark.webp" alt="Muse Spark graphic" width="480" height="270" loading="lazy">
-          <div>
-            <h3><a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark</a></h3>
-            <p class="summary">Natively multimodal reasoning model with visual chain-of-thought, tool use, and multi-agent orchestration. Contributed to multimodal pretraining.</p>
-            <p class="venue">Meta Superintelligence Labs · Apr 2026</p>
-            <div class="paper-links">
-              <a class="ul" href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">blog</a>
-            </div>
-          </div>
-        </article>
       </section>
 
       <section class="band" id="publications">
