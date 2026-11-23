@@ -301,8 +301,8 @@
       }
       .model {
         position: relative;
-        display: grid;
-        grid-template-columns: 128px minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -325,26 +325,26 @@
         box-shadow: 0 8px 22px -14px rgba(26, 25, 23, .5);
         transform: translateY(-2px);
       }
-      /* The embeds lay out at 2.5× the panel size and are scaled down, so their
+      /* The embeds lay out at 2× the panel size and are scaled down, so their
          typography and strokes keep the proportions of the original pages. */
       .model-media {
         position: relative;
-        min-height: 118px;
+        aspect-ratio: 16 / 9;
         overflow: hidden;
-        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
         background: #fff;
       }
       .model-media iframe {
         position: absolute;
         top: 0;
         left: 0;
-        width: 250%;
-        height: 250%;
+        width: 200%;
+        height: 200%;
         border: 0;
-        transform: scale(.4);
+        transform: scale(.5);
         transform-origin: 0 0;
       }
-      .model-body { padding: 10px 12px 11px; }
+      .model-body { padding: 10px 14px 12px; }
       .model h3 {
         margin: 0;
         font-family: var(--serif);
@@ -537,9 +537,7 @@
         .news li { grid-template-columns: 62px minmax(0, 1fr); gap: 10px; padding: 4px 0; font-size: .9rem; }
 
         .models { grid-template-columns: 1fr; gap: 10px; }
-        .model { grid-template-columns: 96px minmax(0, 1fr); }
-        .model-media { min-height: 96px; }
-        .model-body { padding: 8px 10px 9px; }
+        .model-body { padding: 8px 12px 10px; }
 
         .featured { grid-template-columns: 1fr; gap: 0; padding: 0; }
         .pub-card {
