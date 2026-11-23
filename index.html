@@ -55,58 +55,9 @@
         mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, .25) 70%, rgba(0, 0, 0, .1));
       }
       body::after {
-        background: radial-gradient(700px circle at 6% 0%, rgba(214, 170, 120, .10), transparent 60%);
-      }
-
-      /* Soft lens-flare cursor (desktop pointer only). */
-      .cursor-glow {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 260px;
-        height: 260px;
-        margin: -130px 0 0 -130px;
-        border-radius: 50%;
-        pointer-events: none;
-        opacity: 0;
         background:
-          radial-gradient(circle, rgba(255, 244, 236, .95) 0 3px, rgba(214, 170, 120, .55) 8px, rgba(156, 63, 114, .28) 28px, transparent 58%),
-          radial-gradient(circle, rgba(156, 63, 114, .14) 0 42%, transparent 70%);
-        transform: translate3d(var(--mx, -200px), var(--my, -200px), 0);
-        transition: opacity .35s var(--ease);
-        will-change: transform;
-        animation: cursor-flare-pulse 3.2s ease-in-out infinite;
-      }
-      .js.pointer-fine .cursor-glow { opacity: 1; }
-      .cursor-glow::before,
-      .cursor-glow::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        border-radius: 999px;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-      }
-      /* Horizontal flare streak */
-      .cursor-glow::before {
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(214, 170, 120, .55) 28%, rgba(255, 244, 236, .9) 50%, rgba(156, 63, 114, .5) 72%, transparent);
-        box-shadow: 0 0 10px rgba(214, 170, 120, .35);
-      }
-      /* Diagonal flare streak */
-      .cursor-glow::after {
-        width: 78%;
-        height: 1.5px;
-        background: linear-gradient(90deg, transparent, rgba(156, 63, 114, .45) 35%, rgba(255, 244, 236, .75) 50%, rgba(214, 170, 120, .4) 65%, transparent);
-        transform: translate(-50%, -50%) rotate(52deg);
-        opacity: .85;
-      }
-      @keyframes cursor-flare-pulse {
-        0%, 100% { filter: brightness(1); }
-        50% { filter: brightness(1.18); }
+          radial-gradient(560px circle at var(--mx, 82%) var(--my, 8%), rgba(156, 63, 114, .11), transparent 62%),
+          radial-gradient(700px circle at 6% 0%, rgba(214, 170, 120, .10), transparent 60%);
       }
 
       /* Sections fade up as they enter the viewport; only when JS is running. */
@@ -584,12 +535,10 @@
         }
         .portrait-frame:hover .portrait, .portrait-frame:hover::before, .publication:hover .thumbnail, .pub-card:hover .thumbnail, .model:hover { transform: none; }
         .js .reveal { opacity: 1; transform: none; }
-        .cursor-glow, .cursor-glow::before, .cursor-glow::after { display: none; }
       }
     </style>
   </head>
   <body>
-    <div class="cursor-glow" aria-hidden="true"></div>
     <header>
       <nav class="container" aria-label="Primary">
         <a class="brand" href="#top">Jang Hyun <em>Cho</em></a>
@@ -637,7 +586,7 @@
         <div class="band-head"><h2>Model Releases</h2></div>
         <div class="models">
           <article class="model">
-            <div class="model-media"><iframe src="assets/embeds/inkling-2/" title="Interactive Inkling 2 artwork from Thinking Machines Lab" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></div>
+            <div class="model-media"><iframe src="assets/embeds/inkling-2/" title="Interactive Inkling 2 artwork from Thinking Machines Lab" loading="lazy" sandbox="allow-scripts allow-same-origin" style="touch-action: none"></iframe></div>
             <div class="model-body">
               <h3><a class="model-hit" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2</a></h3>
               <p class="venue">Thinking Machines Lab</p>
@@ -663,7 +612,7 @@
 
       <section class="band" id="publications">
         <div class="band-head">
-          <h2>Publications</h2>
+          <h2>Selected Publications</h2>
           <a class="ul" href="https://scholar.google.com/citations?user=oB0g2IkAAAAJ" target="_blank" rel="noopener noreferrer">All on Scholar ↗</a>
         </div>
 
@@ -705,7 +654,7 @@
         </div>
 
         <details class="more">
-          <summary><span class="more-closed">Show 8 more</span><span class="more-open">Show fewer</span></summary>
+          <summary><span class="more-closed">Show all</span><span class="more-open">Show fewer</span></summary>
           <p class="year">2025</p>
           <article class="publication">
             <img class="thumbnail" src="assets/thumbs/vila2.webp" alt="VILA squared teaser figure" width="480" height="96" loading="lazy">
@@ -831,7 +780,6 @@
         const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         if (!still && matchMedia("(pointer: fine)").matches) {
-          root.classList.add("pointer-fine");
           let frame = 0;
           addEventListener("pointermove", (e) => {
             cancelAnimationFrame(frame);
@@ -840,12 +788,6 @@
               root.style.setProperty("--my", e.clientY + "px");
             });
           }, { passive: true });
-        }
-        // Optional: #glow pins a visible cursor artifact for screenshots / demos.
-        if (location.hash === "#glow" && !still) {
-          root.classList.add("pointer-fine");
-          root.style.setProperty("--mx", "52vw");
-          root.style.setProperty("--my", "34vh");
         }
 
         const targets = document.querySelectorAll(".band-head, .news li, .model, .pub-card");
