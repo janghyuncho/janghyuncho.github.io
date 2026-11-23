@@ -297,6 +297,31 @@
         color: var(--muted);
       }
 
+      .more summary {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        list-style: none;
+        cursor: pointer;
+      }
+      .more summary::-webkit-details-marker { display: none; }
+      .more summary span {
+        padding: 5px 16px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        font-family: var(--mono);
+        font-size: .72rem;
+        color: var(--muted);
+        transition: color .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease);
+      }
+      .more summary:hover span { color: var(--accent); border-color: #d9bccd; background: var(--accent-tint); }
+      .more summary:focus-visible { outline: none; }
+      .more summary:focus-visible span { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .more-open, .more[open] .more-closed { display: none; }
+      .more[open] .more-open { display: inline; }
+      .more[open] summary { margin: 4px 0 6px; }
+
       footer {
         padding: 22px 0 30px;
         border-top: 1px solid var(--line);
@@ -494,118 +519,121 @@
           </div>
         </article>
 
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/vila2.webp" alt="VILA squared teaser figure" width="480" height="96" loading="lazy">
-          <div>
-            <h3><a href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">VILA²: VILA Augmented VILA</a></h3>
-            <p class="authors">Yunhao Fang*, Ligeng Zhu*, Yao Lu, Yan Wang, Pavlo Molchanov, Jan Kautz, <strong>Jang Hyun Cho</strong>, Marco Pavone, Song Han, Hongxu Yin</p>
-            <p class="venue">ICCV Workshops 2025 <span class="note">Oral</span></p>
-            <div class="paper-links"><a class="ul" href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">paper</a></div>
-          </div>
-        </article>
-
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/cubellm_teaser.webp" alt="Cube-LLM teaser animation" width="300" height="169" loading="lazy">
-          <div>
-            <h3><a href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">Language-Image Models with 3D Understanding</a></h3>
-            <p class="authors"><strong>Jang Hyun Cho</strong>, Boris Ivanovic, Yulong Cao, Edward Schmerling, Yue Wang, Xinshuo Weng, Boyi Li, Yurong You, Philipp Krähenbühl, Yan Wang, Marco Pavone</p>
-            <p class="venue">ICLR 2025</p>
-            <div class="paper-links">
-              <a class="ul" href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">paper</a>
-              <a class="ul" href="https://janghyuncho.github.io/Cube-LLM" target="_blank" rel="noopener noreferrer">project</a>
+        <details class="more">
+          <summary><span class="more-closed">Show 8 more</span><span class="more-open">Show fewer</span></summary>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/vila2.webp" alt="VILA squared teaser figure" width="480" height="96" loading="lazy">
+            <div>
+              <h3><a href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">VILA²: VILA Augmented VILA</a></h3>
+              <p class="authors">Yunhao Fang*, Ligeng Zhu*, Yao Lu, Yan Wang, Pavlo Molchanov, Jan Kautz, <strong>Jang Hyun Cho</strong>, Marco Pavone, Song Han, Hongxu Yin</p>
+              <p class="venue">ICCV Workshops 2025 <span class="note">Oral</span></p>
+              <div class="paper-links"><a class="ul" href="https://arxiv.org/abs/2407.17453" target="_blank" rel="noopener noreferrer">paper</a></div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <p class="year">2024</p>
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/decola.webp" alt="DECOLA teaser figure" width="480" height="310" loading="lazy">
-          <div>
-            <h3><a href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">Language-Conditioned Detection Transformer</a></h3>
-            <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
-            <p class="venue">CVPR 2024</p>
-            <div class="paper-links">
-              <a class="ul" href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">paper</a>
-              <a class="ul" href="https://janghyuncho.github.io/DECOLA/" target="_blank" rel="noopener noreferrer">project</a>
-              <a class="ul" href="https://github.com/janghyuncho/DECOLA" target="_blank" rel="noopener noreferrer">code</a>
-              <a class="ul" href="assets/bibtex/decola_bib.txt">bibtex</a>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/cubellm_teaser.webp" alt="Cube-LLM teaser animation" width="300" height="169" loading="lazy">
+            <div>
+              <h3><a href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">Language-Image Models with 3D Understanding</a></h3>
+              <p class="authors"><strong>Jang Hyun Cho</strong>, Boris Ivanovic, Yulong Cao, Edward Schmerling, Yue Wang, Xinshuo Weng, Boyi Li, Yurong You, Philipp Krähenbühl, Yan Wang, Marco Pavone</p>
+              <p class="venue">ICLR 2025</p>
+              <div class="paper-links">
+                <a class="ul" href="https://openreview.net/pdf?id=yaQbTAD2JJ" target="_blank" rel="noopener noreferrer">paper</a>
+                <a class="ul" href="https://janghyuncho.github.io/Cube-LLM" target="_blank" rel="noopener noreferrer">project</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <p class="year">2023</p>
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/part_distillation.webp" alt="PartDistillation teaser figure" width="480" height="205" loading="lazy">
-          <div>
-            <h3><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">PartDistillation: Learning Parts from Instance Segmentation</a></h3>
-            <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl, Vignesh Ramanathan</p>
-            <p class="venue">CVPR 2023</p>
-            <div class="paper-links">
-              <a class="ul" href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a class="ul" href="https://janghyuncho.github.io/PartDistillation_website/" target="_blank" rel="noopener noreferrer">project</a>
-              <a class="ul" href="https://github.com/facebookresearch/PartDistillation" target="_blank" rel="noopener noreferrer">code</a>
-              <a class="ul" href="assets/bibtex/pd_bib.txt">bibtex</a>
+          <p class="year">2024</p>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/decola.webp" alt="DECOLA teaser figure" width="480" height="310" loading="lazy">
+            <div>
+              <h3><a href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">Language-Conditioned Detection Transformer</a></h3>
+              <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
+              <p class="venue">CVPR 2024</p>
+              <div class="paper-links">
+                <a class="ul" href="https://arxiv.org/abs/2311.17902" target="_blank" rel="noopener noreferrer">paper</a>
+                <a class="ul" href="https://janghyuncho.github.io/DECOLA/" target="_blank" rel="noopener noreferrer">project</a>
+                <a class="ul" href="https://github.com/janghyuncho/DECOLA" target="_blank" rel="noopener noreferrer">code</a>
+                <a class="ul" href="assets/bibtex/decola_bib.txt">bibtex</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <p class="year">2022</p>
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/nms.webp" alt="NMS Strikes Back teaser figure" width="480" height="248" loading="lazy">
-          <div>
-            <h3><a href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">NMS Strikes Back</a></h3>
-            <p class="authors">Jeffrey Ouyang-Zhang, <strong>Jang Hyun Cho</strong>, Xingyi Zhou, Philipp Krähenbühl</p>
-            <p class="venue">arXiv 2022</p>
-            <div class="paper-links">
-              <a class="ul" href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">paper</a>
-              <a class="ul" href="https://github.com/jozhang97/DETA" target="_blank" rel="noopener noreferrer">code</a>
-              <a class="ul" href="assets/bibtex/nms_bib.txt">bibtex</a>
+          <p class="year">2023</p>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/part_distillation.webp" alt="PartDistillation teaser figure" width="480" height="205" loading="lazy">
+            <div>
+              <h3><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">PartDistillation: Learning Parts from Instance Segmentation</a></h3>
+              <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl, Vignesh Ramanathan</p>
+              <p class="venue">CVPR 2023</p>
+              <div class="paper-links">
+                <a class="ul" href="https://openaccess.thecvf.com/content/CVPR2023/papers/Cho_PartDistillation_Learning_Parts_From_Instance_Segmentation_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+                <a class="ul" href="https://janghyuncho.github.io/PartDistillation_website/" target="_blank" rel="noopener noreferrer">project</a>
+                <a class="ul" href="https://github.com/facebookresearch/PartDistillation" target="_blank" rel="noopener noreferrer">code</a>
+                <a class="ul" href="assets/bibtex/pd_bib.txt">bibtex</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/ecm_loss.webp" alt="ECM-Loss teaser figure" width="480" height="339" loading="lazy">
-          <div>
-            <h3><a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">Long-Tail Detection with Effective Class-Margins</a></h3>
-            <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
-            <p class="venue">ECCV 2022 <span class="note">Oral</span></p>
-            <div class="paper-links">
-              <a class="ul" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a class="ul" href="https://github.com/janghyuncho/ECM-Loss" target="_blank" rel="noopener noreferrer">code</a>
-              <a class="ul" href="assets/bibtex/ecm_bib.txt">bibtex</a>
+          <p class="year">2022</p>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/nms.webp" alt="NMS Strikes Back teaser figure" width="480" height="248" loading="lazy">
+            <div>
+              <h3><a href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">NMS Strikes Back</a></h3>
+              <p class="authors">Jeffrey Ouyang-Zhang, <strong>Jang Hyun Cho</strong>, Xingyi Zhou, Philipp Krähenbühl</p>
+              <p class="venue">arXiv 2022</p>
+              <div class="paper-links">
+                <a class="ul" href="https://arxiv.org/abs/2212.06137" target="_blank" rel="noopener noreferrer">paper</a>
+                <a class="ul" href="https://github.com/jozhang97/DETA" target="_blank" rel="noopener noreferrer">code</a>
+                <a class="ul" href="assets/bibtex/nms_bib.txt">bibtex</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <p class="year">2021</p>
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/picie.webp" alt="PiCIE teaser figure" width="480" height="307" loading="lazy">
-          <div>
-            <h3><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance in Clustering</a></h3>
-            <p class="authors"><strong>Jang Hyun Cho</strong>, Utkarsh Mall, Kavita Bala, Bharath Hariharan</p>
-            <p class="venue">CVPR 2021</p>
-            <div class="paper-links">
-              <a class="ul" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a class="ul" href="https://github.com/janghyuncho/PiCIE" target="_blank" rel="noopener noreferrer">code</a>
-              <a class="ul" href="assets/bibtex/picie_bib.txt">bibtex</a>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/ecm_loss.webp" alt="ECM-Loss teaser figure" width="480" height="339" loading="lazy">
+            <div>
+              <h3><a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">Long-Tail Detection with Effective Class-Margins</a></h3>
+              <p class="authors"><strong>Jang Hyun Cho</strong>, Philipp Krähenbühl</p>
+              <p class="venue">ECCV 2022 <span class="note">Oral</span></p>
+              <div class="paper-links">
+                <a class="ul" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136680684.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+                <a class="ul" href="https://github.com/janghyuncho/ECM-Loss" target="_blank" rel="noopener noreferrer">code</a>
+                <a class="ul" href="assets/bibtex/ecm_bib.txt">bibtex</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <p class="year">2019</p>
-        <article class="publication">
-          <img class="thumbnail" src="assets/thumbs/distillation.webp" alt="Knowledge distillation teaser figure" width="480" height="275" loading="lazy">
-          <div>
-            <h3><a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">On the Efficacy of Knowledge Distillation</a></h3>
-            <p class="authors"><strong>Jang Hyun Cho</strong>, Bharath Hariharan</p>
-            <p class="venue">ICCV 2019</p>
-            <div class="paper-links">
-              <a class="ul" href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
-              <a class="ul" href="assets/bibtex/kd_bib.txt">bibtex</a>
+          <p class="year">2021</p>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/picie.webp" alt="PiCIE teaser figure" width="480" height="307" loading="lazy">
+            <div>
+              <h3><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">PiCIE: Unsupervised Semantic Segmentation Using Invariance and Equivariance in Clustering</a></h3>
+              <p class="authors"><strong>Jang Hyun Cho</strong>, Utkarsh Mall, Kavita Bala, Bharath Hariharan</p>
+              <p class="venue">CVPR 2021</p>
+              <div class="paper-links">
+                <a class="ul" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Cho_PiCIE_Unsupervised_Semantic_Segmentation_Using_Invariance_and_Equivariance_in_Clustering_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+                <a class="ul" href="https://github.com/janghyuncho/PiCIE" target="_blank" rel="noopener noreferrer">code</a>
+                <a class="ul" href="assets/bibtex/picie_bib.txt">bibtex</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+
+          <p class="year">2019</p>
+          <article class="publication">
+            <img class="thumbnail" src="assets/thumbs/distillation.webp" alt="Knowledge distillation teaser figure" width="480" height="275" loading="lazy">
+            <div>
+              <h3><a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">On the Efficacy of Knowledge Distillation</a></h3>
+              <p class="authors"><strong>Jang Hyun Cho</strong>, Bharath Hariharan</p>
+              <p class="venue">ICCV 2019</p>
+              <div class="paper-links">
+                <a class="ul" href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cho_On_the_Efficacy_of_Knowledge_Distillation_ICCV_2019_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+                <a class="ul" href="assets/bibtex/kd_bib.txt">bibtex</a>
+              </div>
+            </div>
+          </article>
+        </details>
       </section>
     </main>
 
