@@ -24,6 +24,10 @@ ANIMATED_QUALITY = 55
 
 STILLS = [
     "images/face.png",
+    "images/inkling2_mini.png",
+    "images/inkling2_small.png",
+    "images/muse_wonder.webp",
+    "images/muse_spark.png",
     "images/llama4.png",
     "images/perceptionlm.png",
     "images/perception_encoder.png",
