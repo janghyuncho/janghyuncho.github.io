@@ -353,6 +353,18 @@
         letter-spacing: -.01em;
       }
       .model:hover h3 a { color: var(--accent); }
+      /* Stretch the title link across the card; version links and the iframe stay above it. */
+      .model-hit::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+      .model-media,
+      .versions a {
+        position: relative;
+        z-index: 2;
+      }
       .model .venue { font-size: .68rem; color: var(--faint); }
       .versions {
         margin: 8px 0 0;
@@ -618,7 +630,7 @@
           <article class="model">
             <div class="model-media"><iframe src="assets/embeds/inkling-2/" title="Interactive Inkling 2 artwork from Thinking Machines Lab" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></div>
             <div class="model-body">
-              <h3><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2</a></h3>
+              <h3><a class="model-hit" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2</a></h3>
               <p class="venue">Thinking Machines Lab</p>
               <ul class="versions">
                 <li><span class="version">Small</span><span class="date">Nov 2026</span><a class="ul" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">page</a> <a class="ul" href="https://thinkingmachines.ai/model-card/inkling-2-small/" target="_blank" rel="noopener noreferrer">model card</a></li>
@@ -629,7 +641,7 @@
           <article class="model">
             <div class="model-media"><iframe src="assets/embeds/muse-wonder/" title="Animated Muse Wonder typographic artwork from Meta Superintelligence Labs" loading="lazy" sandbox="allow-scripts" data-ecto1></iframe></div>
             <div class="model-body">
-              <h3><a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">Muse Spark &amp; Wonder</a></h3>
+              <h3><a class="model-hit" href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener noreferrer">Muse Spark &amp; Wonder</a></h3>
               <p class="venue">Meta Superintelligence Labs</p>
               <ul class="versions">
                 <li><span class="version">Spark</span><span class="date">Apr 2026</span><a class="ul" href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener noreferrer">page</a> <a class="ul" href="https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/" target="_blank" rel="noopener noreferrer">report</a></li>
